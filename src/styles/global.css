@@ -7,3 +7,16 @@
   --font-lexend: "Lexend", sans-serif;
   --font-montserrat: "Montserrat", sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #08111c;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(39, 244, 239, 0.14), transparent 28%),
+    radial-gradient(circle at 85% 85%, rgba(16, 192, 255, 0.12), transparent 26%),
+    linear-gradient(180deg, #10254a 0%, #07101f 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+}

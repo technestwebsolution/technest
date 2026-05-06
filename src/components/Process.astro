@@ -1,0 +1,89 @@
+---
+const steps = [
+  {
+    title: "Discover & Plan",
+    description:
+      "We explore your goals and user needs to create a strategy that drives results, from increased conversions to smoother operations.",
+    icon: "discover",
+  },
+  {
+    title: "Design & Develop",
+    description:
+      "Our team builds stunning, user-friendly designs and robust code, integrating with platforms like Shopify or custom APIs.",
+    icon: "design",
+  },
+  {
+    title: "Launch & Support",
+    description:
+      "We deliver a flawless launch and 24*7 support to ensure your solution stays secure and scalable.",
+    icon: "launch",
+  },
+  {
+    title: "Support & Scale",
+    description:
+      "We provide ongoing support, optimizations, and upgrades to help your product grow and adapt.",
+    icon: "scale",
+  },
+];
+
+const iconPaths = {
+  discover:
+    "M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-2a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z",
+  design:
+    "M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13A1.5 1.5 0 0 1 18.5 20h-13A1.5 1.5 0 0 1 4 18.5v-13ZM4 9h16M8 4v5M16 4v5M8 13h8M8 16h5",
+  launch:
+    "M9 14 20 3l-3 11-4 1-1 4-3-5ZM6 13 3 20l7-3",
+  scale:
+    "M4 16a2 2 0 0 1 2-2h3.5l1.2 1.8A2 2 0 0 0 12.4 17H18a2 2 0 0 1 2 2v1H4v-4Zm2-6a2 2 0 0 1 2-2h1.5l1.2 1.8A2 2 0 0 0 12.4 11H18a2 2 0 0 1 2 2v1H6v-4Zm1-5.5A1.5 1.5 0 0 1 8.5 3h4.9a1.5 1.5 0 0 1 1.2.6L16 6h-6.6a1.5 1.5 0 0 1-1.2-.6L7 4.5Z",
+};
+---
+
+<section
+  id="process"
+  class="relative isolate overflow-hidden bg-transparent px-5 py-16 text-white lg:py-24"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 opacity-15"
+  ></div>
+
+  <div class="relative mx-auto max-w-7xl">
+    <div class="grid gap-8 lg:grid-cols-[1.4fr_0.9fr] lg:items-start">
+      <div>
+        <div class="mb-4 flex items-center gap-3 text-[0.82rem] font-bold uppercase tracking-[0.18em] text-cyan-300">
+          <span class="h-px w-5 bg-cyan-300/80"></span>
+          <span>Our Process</span>
+          <span class="h-px w-5 bg-cyan-300/80"></span>
+        </div>
+
+        <h2 class="max-w-4xl font-lexend text-[25px] lg:text-[55px] font-extrabold leading-[1.20] lg:leading-[0.95] text-white">
+          Innovate and Grow with Our Software Solutions
+        </h2>
+      </div>
+
+      <p class="max-w-xl pt-2 font-montserrat text-[1.02rem] leading-8 text-white/82 lg:pt-12">
+        From custom applications to e-commerce platforms, our software development services drive your business success.
+      </p>
+    </div>
+
+    <div class="mt-10 lg:mt-16 grid gap-10 lg:grid-cols-4 lg:gap-0">
+      {steps.map((step) => (
+        <article class="relative min-h-[250px] lg:border-l lg:border-white/15 lg:px-8 first:border-l-0 first:lg:pl-0">
+          <div class="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/20 text-cyan-300">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-9 w-9 fill-none stroke-current stroke-[1.8]">
+              <path d={iconPaths[step.icon]} stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="font-lexend text-[25px] font-bold leading-tight text-cyan-300">
+            {step.title}
+          </h3>
+
+          <p class="mt-4 max-w-[17rem] font-montserrat text-[1rem] leading-6 text-white/86">
+            {step.description}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
