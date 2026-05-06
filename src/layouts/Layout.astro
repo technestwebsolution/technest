@@ -1,30 +1,36 @@
 ---
 import "../styles/global.css";
-const { title = "Artisanalbyte", description = "Artisanalbyte - Astro" } =
-  Astro.props;
+import Header from "../components/header.astro";
+const {
+	title = "TechNest Web Solution",
+	description = "TechNest Web Solution - Astro",
+} = Astro.props;
 ---
-
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="min-h-screen w-full bg-[#08111c] text-white">
+		<header>
+			<slot name="header" />
+		</header>
+
+		<!-- Main Slot -->
+		<main class="min-h-[70vh]">
+			<slot />
+		</main>
+
+		<!-- Footer Slot -->
+		<footer>
+			<slot name="footer" />
+		</footer>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

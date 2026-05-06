@@ -1,15 +1,61 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from "../components/header.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<!-- <Welcome /> -->
-	 <h1 class="text-3xl text-red-400 font-bold underline">
-  Hello world!
-</h1>
+	<Header slot="header" />
+	<!-- section 1 -->
+	<section
+		class="relative isolate min-h-[70vh] overflow-hidden bg-transparent px-5"
+		style="background-color: transparent; --background-overlay: ''; background-image: linear-gradient(80deg, #021129 0%, #040C1966 65%);"
+	>
+		<img
+			src="/img/background_img.jpg"
+			alt="Hero Background"
+			class="absolute inset-0 z-10 h-full w-full object-cover object-center opacity-20"
+		/>
+		<div
+			aria-hidden="true"
+			class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.09),transparent_28%),linear-gradient(180deg,#07111f_0%,#06101b_100%)]"
+		>
+		</div>
+
+		<div
+			class="flex md:flex-row flex-col mx-auto max-w-7xl lg:gap-20 gap-10 px-5"
+		>
+			<div class="lg:mt-20 mt-5">
+				<h1
+					class="relative z-10 text-[40px] font-bold lg:leading-20 text-white lg:text-[80px] font-lexend"
+				>
+					Your Vision,<br />
+					Our Innovation
+				</h1>
+				<p
+					class="relative z-10 mx-auto mt-6 max-w-7xl text-lg leading-8 tracking-[2px] text-white/[0.95] font-montserrat"
+				>
+					Your trusted partner for innovative web solutions. We
+					specialize in crafting custom websites, e-commerce
+					platforms, and digital marketing strategies that help your
+					business thrive in the digital landscape.
+				</p>
+				<a
+					href="#contact"
+					class="mt-10 relative w-50 font-montserrat z-10 mt-4 inline-flex items-center justify-center gap-3 rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-6 py-3 font-bold text-[#00111b] transition-transform duration-150 hover:-translate-y-0.5 hover:brightness-105"
+				>
+					<span>Let's Innovate</span>
+				</a>
+			</div>
+			<div>
+				<img
+					src="/img/logo_tech.svg"
+					alt="Hero Image"
+					class="relative z-10 md:mt-10 h-auto w-[500px] object-contain object-center opacity-90"
+				/>
+			</div>
+		</div>
+	</section>
+	<!-- <Fragment>
+		<footer />
+	</Fragment> -->
 </Layout>
