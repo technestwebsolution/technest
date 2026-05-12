@@ -1,0 +1,150 @@
+---
+const expertiseBubbles = [
+  { label: "WooCommerce", icon: "woo", className: "left-[10%] top-[18%]" },
+  { label: "Laravel", icon: "laravel", className: "left-[38%] top-[4%]" },
+  { label: "Magento", icon: "magento", className: "left-[18%] top-[36%]" },
+  { label: "PHP", icon: "php", className: "right-[18%] top-[28%]" },
+  { label: "React", icon: "react", className: "right-[4%] top-[40%]" },
+  { label: "WordPress", icon: "wordpress", className: "left-[22%] bottom-[20%]" },
+  { label: "Shopify", icon: "shopify", className: "right-[26%] bottom-[18%]" },
+  // { label: "Node.js", icon: "node", className: "left-[8%] bottom-[6%]" },
+];
+
+const iconStyles = {
+  woo: "text-[#7f54b3]",
+  laravel: "text-[#ff5a52]",
+  magento: "text-[#f76f1c]",
+  php: "text-[#4f5b93]",
+  react: "text-[#61dafb]",
+  wordpress: "text-[#21759b]",
+  shopify: "text-[#95bf47]",
+  node: "text-[#3c873a]",
+};
+---
+
+<section
+  id="expertise"
+  class="relative isolate overflow-hidden px-5 py-0 text-white lg:py-10"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0"
+  ></div>
+
+  <div class="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-16">
+    <div class="relative mx-auto flex w-full max-w-[620px] items-center justify-center">
+      <div class="relative aspect-square w-full max-w-[610px]">
+        <div class="absolute inset-[6%] rounded-full border border-dashed border-white/22"></div>
+        <div class="absolute inset-[13%] rounded-full border border-white/18"></div>
+        <div class="absolute inset-[22%] rounded-full border-2 border-cyan-300/80"></div>
+        <div class="absolute inset-[31%] rounded-full border border-dashed border-white/20"></div>
+        <div class="absolute inset-[41%] rounded-full bg-[radial-gradient(circle,#0d3a72_0%,#071a35_55%,rgba(7,26,53,0.08)_100%)] shadow-[0_0_90px_rgba(11,230,214,0.22)]"></div>
+
+        <div class="absolute left-[18%] top-[18%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
+        <div class="absolute right-[24%] top-[22%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
+        <div class="absolute right-[14%] bottom-[28%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
+        <div class="absolute left-[12%] bottom-[22%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
+
+        <div class="absolute inset-[48%] z-10 flex items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,rgba(27,230,217,0.34),transparent_32%),radial-gradient(circle_at_65%_68%,rgba(126,34,255,0.34),transparent_28%),linear-gradient(180deg,#071029_0%,#0a1830_100%)] shadow-[0_0_60px_rgba(0,0,0,0.36)]">
+          <img
+            src="/img/logo_tech.svg"
+            alt="Technest logo"
+            class="h-[56%] w-[56%] object-contain"
+          />
+        </div>
+
+        {expertiseBubbles.map((bubble) => (
+          <div class={`absolute ${bubble.className} z-20`}>
+            <div
+              class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] sm:h-16 sm:w-16"
+              aria-label={bubble.label}
+            >
+              <span class="sr-only">{bubble.label}</span>
+
+              {bubble.icon === "woo" && (
+                <span class={`text-[0.58rem] font-extrabold tracking-[0.08em] ${iconStyles[bubble.icon]} sm:text-[0.66rem]`}>
+                  WOO
+                </span>
+              )}
+
+              {bubble.icon === "laravel" && (
+                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-7 w-7 fill-none stroke-current stroke-[1.7] ${iconStyles[bubble.icon]} sm:h-8 sm:w-8`}>
+                  <path d="M7 7.5 12 4l5 3.5v6.5L12 17.5 7 14V7.5Z" stroke-linejoin="round"></path>
+                  <path d="M12 4v6.5M7 7.5l5 3.5 5-3.5M7 14l5-3.5 5 3.5M12 10.5v7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              )}
+
+              {bubble.icon === "magento" && (
+                <span class={`text-[1.15rem] font-black tracking-[-0.06em] ${iconStyles[bubble.icon]}`}>M</span>
+              )}
+
+              {bubble.icon === "php" && (
+                <span class={`text-[0.78rem] font-extrabold italic tracking-[-0.06em] ${iconStyles[bubble.icon]}`}>
+                  php
+                </span>
+              )}
+
+              {bubble.icon === "react" && (
+                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-8 w-8 ${iconStyles[bubble.icon]}`}>
+                  <circle cx="12" cy="12" r="1.6" fill="currentColor"></circle>
+                  <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6"></ellipse>
+                  <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(60 12 12)"></ellipse>
+                  <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(120 12 12)"></ellipse>
+                </svg>
+              )}
+
+              {bubble.icon === "wordpress" && (
+                <span class={`text-[1.05rem] font-black ${iconStyles[bubble.icon]}`}>W</span>
+              )}
+
+              {bubble.icon === "shopify" && (
+                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-8 w-8 fill-none stroke-current stroke-[1.7] ${iconStyles[bubble.icon]}`}>
+                  <path d="M7.5 8.5 9.5 5h5L16.5 8.5v8.5h-9V8.5Z" stroke-linejoin="round"></path>
+                  <path d="M9.4 8.2c.2-1.4 1.3-2.4 2.6-2.4s2.4 1 2.6 2.4" stroke-linecap="round"></path>
+                  <path d="M12 11v4.2" stroke-linecap="round"></path>
+                  <path d="M10.5 12.2c.3-.6.9-1 1.6-1 .9 0 1.7.6 1.7 1.5 0 1.8-2.4 1.5-2.4 3.1 0 .7.5 1.2 1.2 1.2.5 0 1-.2 1.4-.5" stroke-linecap="round"></path>
+                </svg>
+              )}
+
+              {bubble.icon === "node" && (
+                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-8 w-8 fill-none stroke-current stroke-[1.7] ${iconStyles[bubble.icon]}`}>
+                  <path d="M12 3.5 18.5 7v7L12 17.5 5.5 14V7L12 3.5Z" stroke-linejoin="round"></path>
+                  <path d="M12 7v10.5M8.5 9.5h7M8.5 14.5h7" stroke-linecap="round"></path>
+                  <circle cx="12" cy="12" r="1.35" fill="currentColor" stroke="none"></circle>
+                </svg>
+              )}
+            </div>
+          </div>
+        ))}
+
+        <div class="absolute left-[13%] top-[66%] h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(27,230,217,0.95)]"></div>
+        <div class="absolute right-[13%] top-[62%] h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(27,230,217,0.95)]"></div>
+      </div>
+    </div>
+
+    <div class="lg:pl-4">
+      <div class="mb-5 flex items-center gap-3 text-[0.82rem] font-bold uppercase tracking-[0.18em] text-cyan-300">
+        <span class="h-px w-5 bg-cyan-300/80"></span>
+        <span>Our Expertise</span>
+        <span class="h-px w-5 bg-cyan-300/80"></span>
+      </div>
+
+      <h2 class="font-lexend text-[25px] font-extrabold lg:leading-[1.08] text-white lg:text-[50px]">
+        Trust Technest to Transform Your Vision
+      </h2>
+
+      <p class="mt-5 max-w-2xl font-montserrat text-[20px] leading-8 text-white/88">
+        Choosing the right partner matters. Technest combines deep expertise in AI, cloud, and modern web development to build software that is fast, scalable, and ready to grow with your business. From startups to enterprises, we deliver clear communication, strong execution, and results you can trust.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href="#contact"
+          class="inline-flex min-h-[3.2rem] items-center justify-center rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-8 font-montserrat text-[1rem] font-bold text-[#00111b] transition-transform duration-150 hover:-translate-y-0.5 hover:brightness-105"
+        >
+          Contact Our Experts
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
