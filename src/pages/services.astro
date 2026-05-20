@@ -1,9 +1,13 @@
 ---
 import Header from "../components/header.astro";
 import ServiceHero from "../components/ServiceHero.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
 import Layout from "../layouts/Layout.astro";
 import Services from "../components/Services.astro";
 import Process from "../components/Process.astro";
+import Contact from "../components/Contact.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <Layout
@@ -12,6 +16,11 @@ import Process from "../components/Process.astro";
 >
     <Header slot="header" />
     <ServiceHero />
+
     <Services />
     <Process />
+    <WhyChooseUs />
+    <Contact />
+    <Newsletter />
+    <Footer />
 </Layout>

@@ -1,0 +1,109 @@
+---
+const features = [
+  {
+    title: "Clear & Honest Pricing",
+    description:
+      "No hidden costs, no surprise invoices. You get a fixed quote before we start - and we stick to it. Always.",
+    icon: "target",
+  },
+  {
+    title: "On-Time Delivery",
+    description:
+      "We respect your deadlines. Every project runs on a clear timeline with weekly updates so you always know exactly where things stand.",
+    icon: "bolt",
+  },
+  {
+    title: "Global Experience",
+    description:
+      "We have successfully delivered projects for clients across India, UK, and the US - we understand what international businesses expect.",
+    icon: "globe",
+  },
+  {
+    title: "End-to-End Development",
+    description:
+      "From design and development to launch and ongoing support - we handle everything so you don't have to manage multiple vendors.",
+    icon: "tools",
+  },
+  {
+    title: "24/7 Support After Launch",
+    description:
+      "We don't disappear after going live. Our team is always available for fixes, updates, and improvements whenever you need us.",
+    icon: "support",
+  },
+  {
+    title: "Client-First Approach",
+    description:
+      "Your success is our success. We take time to understand your business goals and build solutions that actually solve your real problems.",
+    icon: "star",
+  },
+];
+
+const iconPaths = {
+  target:
+    "M12 2a10 10 0 1 0 10 10h-2A8 8 0 1 1 12 4V2Zm0 5a5 5 0 1 0 5 5h-2a3 3 0 1 1-3-3V7Zm0 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm7-8-5.5 5.5",
+  bolt:
+    "M13 2 4 14h6l-1 8 9-12h-6l1-8Z",
+  globe:
+    "M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 0c-2.8 2.7-4.5 6.2-4.5 10S9.2 19.3 12 22m0-20c2.8 2.7 4.5 6.2 4.5 10S14.8 19.3 12 22M2 12h20M4.8 6.5h14.4M4.8 17.5h14.4",
+  tools:
+    "m14.7 6.3 3-3a4.6 4.6 0 0 0 4.7 6.2l-3.1 3.1-2.2-.4-7.9 7.9a2.1 2.1 0 1 1-3-3l7.9-7.9-.4-2.2Zm-7.5 7.5 3 3M6 6l4 4",
+  support:
+    "M4.5 5.5A2.5 2.5 0 0 1 7 3h10a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 17 15h-4l-4 4v-4H7A2.5 2.5 0 0 1 4.5 12.5v-7ZM8 7h8M8 10h5m5.5 1.5 1.6 1.4-.4 2 1.7 1.1-.8 1.8-2-.2-1.4 1.5-1.8-.8.2-2-1.5-1.4 1.4-1.6-.2-2 1.8-.8Z",
+  star:
+    "m12 3 2.6 5.2 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8L12 3Z",
+};
+---
+
+<section class="relative isolate overflow-hidden px-5 py-0 text-white lg:py-24">
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0"
+  ></div>
+
+  <!-- <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(90deg,rgba(255,255,255,0.11)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.11)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.72),transparent_96%)]"
+  ></div> -->
+
+  <div class="relative mx-auto max-w-7xl">
+    <div class="grid gap-8 lg:grid-cols-[1.25fr_0.95fr] lg:items-start">
+      <div>
+        <div class="mb-4 flex items-center gap-3 text-[0.82rem] font-bold uppercase tracking-[0.18em] text-cyan-300">
+          <span class="h-px w-4 bg-white/70"></span>
+          <span>Why Technest</span>
+          <span class="h-px w-4 bg-white/70"></span>
+        </div>
+
+        <h2 class="max-w-4xl font-lexend text-[25px] lg:text-[55px] font-extrabold leading-[1.20] lg:leading-[0.95] text-white">
+          Why Businesses Choose Us Over Others
+        </h2>
+      </div>
+
+      <p class="max-w-xl pt-2 font-montserrat text-[1.02rem] leading-8 text-white/82 lg:pt-12">
+        We don't just write code - we become your technology partner, invested in your success from day one to long after launch.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2 lg:mt-14 lg:grid-cols-3">
+      {features.map((feature) => (
+        <article class="group min-h-[260px] border border-white/70 px-5 py-7 transition-all duration-200 hover:-translate-y-1 hover:border-transparent sm:px-6 sm:py-8">
+          <div class="flex justify-center">
+            <div class="inline-flex h-14 w-14 items-center justify-center rounded-full border border-white/90 bg-white text-[#08162e]">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 fill-none stroke-current stroke-[1.9]">
+                <path d={iconPaths[feature.icon]} stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+
+          <h3 class="mt-7 font-lexend text-[1.35rem] font-extrabold leading-tight text-white sm:text-[1.6rem]">
+            {feature.title}
+          </h3>
+
+          <p class="mt-4 font-montserrat text-[0.98rem] leading-7 text-white/88 sm:text-[1.04rem]">
+            {feature.description}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
