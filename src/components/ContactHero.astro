@@ -1,0 +1,33 @@
+---
+const title = Astro.props.title ?? "Contact";
+const breadcrumb = Astro.props.breadcrumb ?? "Home - Contact";
+---
+
+<section
+  class="relative isolate overflow-hidden px-5 pt-24 pb-28 text-white lg:pt-20 lg:pb-20"
+>
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0"
+  ></div>
+
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 opacity-30"
+  ></div>
+
+  <div class="relative mx-auto flex max-w-7xl flex-col items-center justify-start text-center">
+    <h1 class="mt-8 font-lexend text-[25px] font-bold leading-[0.95] text-white lg:text-[70px]">
+      {title}
+    </h1>
+
+    <p class="mt-4 font-montserrat text-[1.05rem] leading-7 text-white/92 sm:text-[1.1rem]">
+      <a href="/" class="text-cyan-400 transition-colors duration-150 hover:text-cyan-300">Home</a>
+      <span class="mx-2 text-white">-</span>
+      <span>{breadcrumb.replace("Home - ", "")}</span>
+    </p>
+  </div>
+
+
+</section>
+

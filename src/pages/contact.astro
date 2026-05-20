@@ -1,0 +1,33 @@
+---
+import Header from "../components/header.astro";
+import ContactHero from "../components/ContactHero.astro";
+import Contact from "../components/Contact.astro";
+import Layout from "../layouts/Layout.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/footer.astro";
+---
+
+<Layout
+    title="Contact Us | TechNest Web Solution"
+    description="Contact by TechNest Web Solution"
+>
+    <Header slot="header" />
+    <ContactHero />
+    <Contact />
+    
+        <div class="mt-4">
+          <div class="mt-5 overflow-hidden">
+            <iframe
+              title="TechNest Web Solution location map"
+              src="https://www.google.com/maps?q=Ahmedabad,Gujarat&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              class="block h-[280px] w-full border-0 sm:h-[340px]"
+            ></iframe>
+          </div>
+        </div>
+
+        <Newsletter />
+        <Footer />
+</Layout>
