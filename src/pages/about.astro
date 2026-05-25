@@ -1,0 +1,33 @@
+---
+import Header from "../components/header.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <Header slot="header" />
+
+    <section
+        class="relative isolate overflow-hidden bg-transparent px-5"
+        style="background-color: transparent; --background-overlay: ''; background-image: linear-gradient(80deg, #021129 0%, #040C1966 65%);"
+    >
+        <img
+            src="/img/about.jpg"
+            alt="Hero Background"
+            class="absolute inset-0 z-10 h-full w-full object-cover object-center opacity-20"
+        />
+        <div
+            aria-hidden="true"
+            class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.09),transparent_28%),linear-gradient(180deg,#07111f_0%,#06101b_100%)]"
+        >
+        </div>
+        <div
+            class="mx-auto flex min-h-[300px] max-w-7xl flex-col items-center justify-center px-5 text-center lg:min-h-[400px]"
+        >
+            <h1
+                class="relative z-10 font-lexend text-[40px] font-bold leading-[1.1] text-white lg:text-[60px] lg:leading-[80px]"
+            >
+                About Us
+            </h1>
+        </div>
+    </section></Layout
+>
