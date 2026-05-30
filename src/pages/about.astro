@@ -1,5 +1,6 @@
 ---
 import Header from "../components/header.astro";
+import ValuesFounderSection from "../components/ValuesFounderSection.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -30,44 +31,73 @@ import Layout from "../layouts/Layout.astro";
             </h1>
         </div>
     </section>
-    
- <section class="relative isolate overflow-hidden px-5 py-12 text-white lg:py-16 lg:mt-10">
-    <div class="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-16">
-      <div class="relative hidden lg:block overflow-hidden rounded-[0.2rem] border border-white/[0.08] shadow-[0_28px_90px_rgba(0,0,0,0.38)]">
-        <img
-          src="/img/about_img.png"
-          alt="About Us"
-          class="h-[560px] w-full object-cover object-center sm:h-[620px] lg:h-[790px]"
-        />
-      </div>
 
-      <div class="relative max-w-3xl lg:pt-4">
-        <div class="mb-6 flex items-center gap-3 text-[0.82rem] font-bold uppercase tracking-[0.18em] text-cyan-300">
-          <span class="h-px w-4 bg-white/80"></span>
-          <span>About us</span>
-          <span class="h-px w-4 bg-white/80"></span>
+    <section
+        class="relative isolate overflow-hidden px-5 py-12 text-white lg:py-16 lg:mt-10"
+    >
+        <div
+            class="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-16"
+        >
+            <div
+                class="relative hidden lg:block overflow-hidden rounded-[0.2rem] border border-white/[0.08] shadow-[0_28px_90px_rgba(0,0,0,0.38)]"
+            >
+                <img
+                    src="/img/about_img.png"
+                    alt="About Us"
+                    class="h-[560px] w-full object-cover object-center sm:h-[620px] lg:h-[790px]"
+                />
+            </div>
+
+            <div class="relative max-w-3xl lg:pt-4">
+                <div
+                    class="mb-6 flex items-center gap-3 text-[0.82rem] font-bold uppercase tracking-[0.18em] text-cyan-300"
+                >
+                    <span class="h-px w-4 bg-white/80"></span>
+                    <span>About us</span>
+                    <span class="h-px w-4 bg-white/80"></span>
+                </div>
+
+                <h1
+                    class="max-w-2xl font-lexend text-[35px] font-bold leading-[1.05] text-white lg:text-[58px]"
+                >
+                    About Technest Web Solutions
+                </h1>
+
+                <p
+                    class="mt-6 max-w-2xl font-montserrat text-[17px] leading-8 text-white/88 sm:text-[18px]"
+                >
+                    Since 2022, Technest Web Solutions, founded by Richa Shah in
+                    Ahmedabad, has crafted innovative digital platforms for
+                    businesses worldwide. We specialize in e-commerce, SaaS, and
+                    custom web development, using PHP expertise to build
+                    Magento-powered stores, Shopify shops, and Laravel apps. Our
+                    solutions drive sales and engagement for clients in retail,
+                    healthcare, and more, delivering tailored technology that
+                    fuels success.
+                </p>
+
+                <p
+                    class="mt-6 max-w-2xl font-montserrat text-[17px] leading-8 text-white/88 sm:text-[18px]"
+                >
+                    With a passion for your growth, we blend UI/UX design with
+                    robust development to create user-friendly platforms that
+                    elevate your business. This commitment ensures every
+                    project, from WooCommerce stores to SaaS systems, delivers
+                    measurable results. Based in Ahmedabad, our team transforms
+                    your ideas into code with creativity and precision, building
+                    trust through every solution.
+                </p>
+            </div>
+            <div
+                class="relative lg:hidden overflow-hidden rounded-[0.2rem] border border-white/[0.08] shadow-[0_28px_90px_rgba(0,0,0,0.38)]"
+            >
+                <img
+                    src="/img/about_img.png"
+                    alt="About Us"
+                    class="h-[560px] w-full object-cover object-center sm:h-[620px] lg:h-[790px]"
+                />
+            </div>
         </div>
-
-        <h1 class="max-w-2xl font-lexend text-[35px] font-bold leading-[1.05] text-white lg:text-[58px]">
-          About Technest Web Solutions
-        </h1>
-
-        <p class="mt-6 max-w-2xl font-montserrat text-[17px] leading-8 text-white/88 sm:text-[18px]">
-          Since 2022, Technest Web Solutions, founded by Richa Shah in Ahmedabad, has crafted innovative digital platforms for businesses worldwide. We specialize in e-commerce, SaaS, and custom web development, using PHP expertise to build Magento-powered stores, Shopify shops, and Laravel apps. Our solutions drive sales and engagement for clients in retail, healthcare, and more, delivering tailored technology that fuels success.
-        </p>
-
-        <p class="mt-6 max-w-2xl font-montserrat text-[17px] leading-8 text-white/88 sm:text-[18px]">
-          With a passion for your growth, we blend UI/UX design with robust development to create user-friendly platforms that elevate your business. This commitment ensures every project, from WooCommerce stores to SaaS systems, delivers measurable results. Based in Ahmedabad, our team transforms your ideas into code with creativity and precision, building trust through every solution.
-        </p>
-      </div>
-       <div class="relative lg:hidden overflow-hidden rounded-[0.2rem] border border-white/[0.08] shadow-[0_28px_90px_rgba(0,0,0,0.38)]">
-        <img
-          src="/img/about_img.png"
-          alt="About Us"
-          class="h-[560px] w-full object-cover object-center sm:h-[620px] lg:h-[790px]"
-        />
-      </div>
-    </div>
-  </section>
-
-    </Layout>
+    </section>
+    <ValuesFounderSection />
+</Layout>
