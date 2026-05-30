@@ -6,12 +6,13 @@ import Layout from "../layouts/Layout.astro";
 import Contact from "../components/contact.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Footer from "../components/footer.astro";
+import AboutHero from "../components/AboutHero.astro";
 ---
 
 <Layout>
     <Header slot="header" />
 
-    <section
+    <!-- <section
         class="relative isolate overflow-hidden bg-transparent px-5"
         style="background-color: transparent; --background-overlay: ''; background-image: linear-gradient(80deg, #021129 0%, #040C1966 65%);"
     >
@@ -34,8 +35,9 @@ import Footer from "../components/footer.astro";
                 About Us
             </h1>
         </div>
-    </section>
+    </section> -->
 
+    <AboutHero />
     <section
         class="relative isolate overflow-hidden px-5 py-12 text-white lg:py-16 lg:mt-10"
     >
