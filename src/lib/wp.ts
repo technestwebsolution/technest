@@ -31,9 +31,12 @@ export type BlogPost = {
 };
 
 const env = import.meta.env as Record<string, string | undefined>;
+const defaultWordPressSiteUrl = "https://wordpresstechnestwebsolution.com";
 
 const wordpressSiteUrl =
-  env.WORDPRESS_SITE_URL ?? env.PUBLIC_WORDPRESS_SITE_URL ?? "";
+  env.WORDPRESS_SITE_URL ??
+  env.PUBLIC_WORDPRESS_SITE_URL ??
+  defaultWordPressSiteUrl;
 
 const wordpressPostsApiUrl =
   env.WORDPRESS_POSTS_API_URL ?? env.PUBLIC_WORDPRESS_POSTS_API_URL ?? "";
