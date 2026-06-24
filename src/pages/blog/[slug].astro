@@ -1,0 +1,109 @@
+---
+import Header from "../../components/header.astro";
+import Footer from "../../components/footer.astro";
+import Layout from "../../layouts/Layout.astro";
+import { WORDPRESS_BLOG_EMPTY_STATE, fetchWordPressPosts } from "../../lib/wp";
+import type { BlogPost } from "../../lib/wp";
+
+export async function getStaticPaths() {
+  const posts = await fetchWordPressPosts(100);
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post?: BlogPost };
+---
+
+<Layout
+  title={post ? `${post.title} | Technest Web Solution` : "Blog | Technest Web Solution"}
+  description={post ? post.excerpt : WORDPRESS_BLOG_EMPTY_STATE.description}
+>
+  <Header slot="header" />
+
+  <section class="relative isolate overflow-hidden px-5 py-12 text-white lg:py-16">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(31,197,255,0.12),transparent_45%),linear-gradient(180deg,#08111c_0%,#050b15_100%)]"
+    ></div>
+
+    <div class="relative mx-auto max-w-5xl">
+      {post ? (
+        <>
+          <a
+            href="/blog"
+            class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.2em] text-cyan-300 transition-colors duration-150 hover:text-cyan-200"
+          >
+            <span aria-hidden="true">&larr;</span>
+            <span>Back to blog</span>
+          </a>
+
+          <article class="mt-6 overflow-hidden border border-white/12 bg-[#06101e] shadow-[0_28px_90px_rgba(0,0,0,0.38)]">
+            <div class="bg-[#d7cfc2] p-3">
+              <img
+                src={post.image}
+                alt={post.alt}
+                class="h-[260px] w-full object-cover object-center sm:h-[360px] lg:h-[460px]"
+              />
+            </div>
+
+            <div class="px-5 py-7 sm:px-8 sm:py-10 lg:px-10">
+              <div class="flex items-center gap-2 text-[0.92rem] font-montserrat text-cyan-300">
+                <span class="inline-flex h-4 w-4 items-center justify-center rounded-sm border border-cyan-300/60 text-[0.62rem] leading-none">
+                  &#128197;
+                </span>
+                <span>{post.date}</span>
+              </div>
+
+              <h1 class="mt-4 font-lexend text-[clamp(2rem,4vw,3.75rem)] font-extrabold leading-[1.06] text-white">
+                {post.title}
+              </h1>
+
+              <p class="mt-5 max-w-3xl font-montserrat text-[1rem] leading-8 text-white/82 sm:text-[1.05rem]">
+                {post.excerpt}
+              </p>
+
+              <div class="mt-10 space-y-6 font-montserrat text-[1rem] leading-8 text-white/88 [&_a]:text-cyan-300 [&_a]:underline [&_a:hover]:text-cyan-200 [&_h2]:mt-8 [&_h2]:font-lexend [&_h2]:text-[1.6rem] [&_h2]:font-bold [&_h3]:mt-6 [&_h3]:font-lexend [&_h3]:text-[1.25rem] [&_h3]:font-bold [&_img]:my-8 [&_img]:rounded-[1rem]">
+                <div set:html={post.content}></div>
+              </div>
+
+              {post.wordpressLink.startsWith("http") && (
+                <div class="mt-10">
+                  <a
+                    href={post.wordpressLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center gap-2 rounded-full border border-cyan-300/40 px-5 py-3 font-montserrat text-sm font-bold text-cyan-300 transition-colors duration-150 hover:border-cyan-200 hover:text-cyan-200"
+                  >
+                    <span>View original WordPress post</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          </article>
+        </>
+      ) : (
+        <div class="mx-auto max-w-3xl border border-dashed border-cyan-300/30 bg-[#06101e] px-6 py-10 text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">
+            {WORDPRESS_BLOG_EMPTY_STATE.title}
+          </p>
+          <p class="mt-4 font-montserrat text-[1rem] leading-8 text-white/82">
+            {WORDPRESS_BLOG_EMPTY_STATE.description}
+          </p>
+          <a
+            href="/blog"
+            class="mt-8 inline-flex items-center gap-2 rounded-full border border-cyan-300/40 px-5 py-3 font-montserrat text-sm font-bold text-cyan-300 transition-colors duration-150 hover:border-cyan-200 hover:text-cyan-200"
+          >
+            <span>Back to blog</span>
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
