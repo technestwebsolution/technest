@@ -7,7 +7,7 @@ const technologies = [
   { label: "WooCommerce", icon: "woo", orbit: "outer", angle: "155deg" },
 
   { label: "PHP", icon: "php", orbit: "middle", angle: "18deg" },
-  { label: "WordPress", icon: "wordpress", orbit: "middle", angle: "205deg" },
+  { label: "CMS", icon: "cms", orbit: "middle", angle: "205deg" },
   { label: "Shopify", icon: "shopify", orbit: "middle", angle: "300deg" },
 
   { label: "Laravel", icon: "laravel", orbit: "inner", angle: "135deg" },
@@ -42,7 +42,7 @@ const iconColor = {
   vue: "text-[#41b883]",
   woo: "text-[#7f54b3]",
   php: "text-[#4f5b93]",
-  wordpress: "text-[#21759b]",
+  cms: "text-[#21759b]",
   magento: "text-[#f76f1c]",
   shopify: "text-[#95bf47]",
   laravel: "text-[#ff5a52]",
@@ -121,8 +121,8 @@ const iconColor = {
                         </span>
                       )}
 
-                      {item.icon === "wordpress" && (
-                        <div class={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-current text-xl font-black ${iconColor.wordpress}`}>
+                      {item.icon === "cms" && (
+                        <div class={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-current text-xl font-black ${iconColor.cms}`}>
                           W
                         </div>
                       )}

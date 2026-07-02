@@ -14,7 +14,7 @@ const expertiseItems = [
   },
 ];
 
-const videoSrc = "https://technestwebsolution.com/wp-content/uploads/2026/04/Richa-Reel.mp4";
+const mediaSrc = "/img/about.webp";
 ---
 
 <section
@@ -69,18 +69,15 @@ const videoSrc = "https://technestwebsolution.com/wp-content/uploads/2026/04/Ric
       </div>
     </div>
 
-    <!-- Right Video -->
+    <!-- Right Media -->
     <div class="lg:col-span-2 xl:col-span-1 xl:flex xl:justify-end">
       <div class="relative w-full max-w-[610px] border-2 border-black">
         <div class="relative h-[520px] w-full overflow-hidden bg-black sm:h-[620px] lg:h-[720px] xl:h-full">
-          <video
+          <img
             class="h-full w-full object-cover"
-            src={videoSrc}
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
+            src={mediaSrc}
+            alt="Technest expertise showcase"
+          />
         </div>
       </div>
     </div>

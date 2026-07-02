@@ -2,24 +2,23 @@
 import Header from "../../components/header.astro";
 import Footer from "../../components/footer.astro";
 import Layout from "../../layouts/Layout.astro";
-import { WORDPRESS_BLOG_EMPTY_STATE, fetchWordPressPosts } from "../../lib/wp";
-import type { BlogPost } from "../../lib/wp";
+import { blogPosts, getBlogPostBySlug } from "../../lib/blog";
+import type { BlogPost } from "../../lib/blog";
 
 export async function getStaticPaths() {
-  const posts = await fetchWordPressPosts(100);
-
-  return posts.map((post) => ({
+  return blogPosts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
 }
 
-const { post } = Astro.props as { post?: BlogPost };
+const { post: staticPost } = Astro.props as { post?: BlogPost };
+const post = staticPost ?? getBlogPostBySlug(Astro.params.slug ?? "");
 ---
 
 <Layout
   title={post ? `${post.title} | Technest Web Solution` : "Blog | Technest Web Solution"}
-  description={post ? post.excerpt : WORDPRESS_BLOG_EMPTY_STATE.description}
+  description={post ? post.excerpt : "Latest blog posts from Technest Web Solution."}
 >
   <Header slot="header" />
 
@@ -69,29 +68,16 @@ const { post } = Astro.props as { post?: BlogPost };
                 <div set:html={post.content}></div>
               </div>
 
-              {post.wordpressLink.startsWith("http") && (
-                <div class="mt-10">
-                  <a
-                    href={post.wordpressLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    class="inline-flex items-center gap-2 rounded-full border border-cyan-300/40 px-5 py-3 font-montserrat text-sm font-bold text-cyan-300 transition-colors duration-150 hover:border-cyan-200 hover:text-cyan-200"
-                  >
-                    <span>View original WordPress post</span>
-                    <span aria-hidden="true">&rarr;</span>
-                  </a>
-                </div>
-              )}
             </div>
           </article>
         </>
       ) : (
         <div class="mx-auto max-w-3xl border border-dashed border-cyan-300/30 bg-[#06101e] px-6 py-10 text-center">
           <p class="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">
-            {WORDPRESS_BLOG_EMPTY_STATE.title}
+            Blog post not found
           </p>
           <p class="mt-4 font-montserrat text-[1rem] leading-8 text-white/82">
-            {WORDPRESS_BLOG_EMPTY_STATE.description}
+            The article you requested is not available.
           </p>
           <a
             href="/blog"
