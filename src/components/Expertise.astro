@@ -1,150 +1,266 @@
 ---
-const expertiseBubbles = [
-  { label: "WooCommerce", icon: "woo", className: "left-[10%] top-[18%]" },
-  { label: "Laravel", icon: "laravel", className: "left-[38%] top-[4%]" },
-  { label: "Magento", icon: "magento", className: "left-[18%] top-[36%]" },
-  { label: "PHP", icon: "php", className: "right-[18%] top-[28%]" },
-  { label: "React", icon: "react", className: "right-[4%] top-[40%]" },
-  { label: "WordPress", icon: "wordpress", className: "left-[22%] bottom-[20%]" },
-  { label: "Shopify", icon: "shopify", className: "right-[26%] bottom-[18%]" },
-  // { label: "Node.js", icon: "node", className: "left-[8%] bottom-[6%]" },
+const technologies = [
+  { label: "React", icon: "react", orbit: "outer", angle: "278deg" },
+  { label: "Node.js", icon: "node", orbit: "outer", angle: "345deg" },
+  { label: "Next.js", icon: "next", orbit: "outer", angle: "38deg" },
+  { label: "Vue", icon: "vue", orbit: "outer", angle: "92deg" },
+  { label: "WooCommerce", icon: "woo", orbit: "outer", angle: "155deg" },
+
+  { label: "PHP", icon: "php", orbit: "middle", angle: "18deg" },
+  { label: "WordPress", icon: "wordpress", orbit: "middle", angle: "205deg" },
+  { label: "Shopify", icon: "shopify", orbit: "middle", angle: "300deg" },
+
+  { label: "Laravel", icon: "laravel", orbit: "inner", angle: "135deg" },
+  { label: "Magento", icon: "magento", orbit: "inner", angle: "260deg" },
 ];
 
-const iconStyles = {
-  woo: "text-[#7f54b3]",
-  laravel: "text-[#ff5a52]",
-  magento: "text-[#f76f1c]",
-  php: "text-[#4f5b93]",
+const orbitSettings = {
+  outer: {
+    size: "92%",
+    duration: "32s",
+    direction: "normal",
+    ring: "border-cyan-300/85",
+  },
+  middle: {
+    size: "68%",
+    duration: "26s",
+    direction: "reverse",
+    ring: "border-white/35 border-dashed",
+  },
+  inner: {
+    size: "44%",
+    duration: "20s",
+    direction: "normal",
+    ring: "border-cyan-300/75",
+  },
+};
+
+const iconColor = {
   react: "text-[#61dafb]",
-  wordpress: "text-[#21759b]",
-  shopify: "text-[#95bf47]",
   node: "text-[#3c873a]",
+  next: "text-black",
+  vue: "text-[#41b883]",
+  woo: "text-[#7f54b3]",
+  php: "text-[#4f5b93]",
+  wordpress: "text-[#21759b]",
+  magento: "text-[#f76f1c]",
+  shopify: "text-[#95bf47]",
+  laravel: "text-[#ff5a52]",
 };
 ---
 
-<section
-  id="expertise"
-  class="relative isolate overflow-hidden px-5 py-0 text-white lg:py-10"
->
-  <div
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0"
-  ></div>
+<section class="relative isolate overflow-hidden px-5 py-16 text-white lg:py-24">
+  <div class="pointer-events-none absolute inset-0"></div>
 
-  <div class="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-16">
-    <div class="relative mx-auto flex w-full max-w-[620px] items-center justify-center">
-      <div class="relative aspect-square w-full max-w-[610px]">
-        <div class="absolute inset-[6%] rounded-full border border-dashed border-white/22"></div>
-        <div class="absolute inset-[13%] rounded-full border border-white/18"></div>
-        <div class="absolute inset-[22%] rounded-full border-2 border-cyan-300/80"></div>
-        <div class="absolute inset-[31%] rounded-full border border-dashed border-white/20"></div>
-        <div class="absolute inset-[41%] rounded-full bg-[radial-gradient(circle,#0d3a72_0%,#071a35_55%,rgba(7,26,53,0.08)_100%)] shadow-[0_0_90px_rgba(11,230,214,0.22)]"></div>
+  <div class="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+    <div class="mx-auto flex w-full max-w-[720px] items-center justify-center">
+      <div class="relative aspect-square w-full max-w-[680px]">
 
-        <div class="absolute left-[18%] top-[18%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
-        <div class="absolute right-[24%] top-[22%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
-        <div class="absolute right-[14%] bottom-[28%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
-        <div class="absolute left-[12%] bottom-[22%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_16px_rgba(27,230,217,0.95)]"></div>
+        <!-- Background dotted rings -->
+        <div class="absolute left-1/2 top-1/2 h-[92%] w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-dotted border-white/20"></div>
+        <div class="absolute left-1/2 top-1/2 h-[68%] w-[68%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-dotted border-white/18"></div>
+        <div class="absolute left-1/2 top-1/2 h-[44%] w-[44%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-dotted border-white/14"></div>
 
-        <div class="absolute inset-[48%] z-10 flex items-center justify-center rounded-full bg-[radial-gradient(circle_at_35%_30%,rgba(27,230,217,0.34),transparent_32%),radial-gradient(circle_at_65%_68%,rgba(126,34,255,0.34),transparent_28%),linear-gradient(180deg,#071029_0%,#0a1830_100%)] shadow-[0_0_60px_rgba(0,0,0,0.36)]">
-          <img
-            src="/img/logo_tech.svg"
-            alt="Technest logo"
-            class="h-[56%] w-[56%] object-contain"
-          />
-        </div>
+        <!-- Orbit layers -->
+        {Object.entries(orbitSettings).map(([orbitName, setting]) => (
+          <div
+            class={`orbit-layer absolute left-1/2 top-1/2 z-10 rounded-full ${
+              setting.direction === "reverse" ? "orbit-layer--reverse" : ""
+            }`}
+            style={`width:${setting.size}; height:${setting.size}; --duration:${setting.duration};`}
+          >
+            <!-- Moving border -->
+            <div class={`absolute inset-0 rounded-full border-[4px] ${setting.ring} shadow-[0_0_24px_rgba(39,244,239,0.22)]`}></div>
 
-        {expertiseBubbles.map((bubble) => (
-          <div class={`absolute ${bubble.className} z-20`}>
-            <div
-              class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] sm:h-16 sm:w-16"
-              aria-label={bubble.label}
-            >
-              <span class="sr-only">{bubble.label}</span>
+            <!-- Glow dots on border -->
+            <span class="absolute left-[17%] top-[5%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_24px_rgba(39,244,239,0.95)]"></span>
+            <span class="absolute bottom-[3%] right-[28%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_24px_rgba(39,244,239,0.95)]"></span>
 
-              {bubble.icon === "woo" && (
-                <span class={`text-[0.58rem] font-extrabold tracking-[0.08em] ${iconStyles[bubble.icon]} sm:text-[0.66rem]`}>
-                  WOO
-                </span>
-              )}
+            <!-- Icons fixed on same border -->
+            {technologies
+              .filter((item) => item.orbit === orbitName)
+              .map((item) => (
+                <div
+                  class="orbit-marker absolute inset-0"
+                  style={`--angle:${item.angle}; --duration:${setting.duration};`}
+                >
+                  <div class="orbit-card absolute left-1/2 top-0 z-30 flex h-[58px] w-[58px] items-center justify-center rounded-full bg-white shadow-[0_16px_38px_rgba(0,0,0,0.38)] ring-1 ring-white/70 sm:h-[70px] sm:w-[70px] lg:h-[78px] lg:w-[78px]">
+                    <div class={`orbit-card-inner flex h-full w-full items-center justify-center ${setting.direction === "reverse" ? "orbit-card-inner--reverse" : ""}`}>
+                      
+                      {item.icon === "react" && (
+                        <svg viewBox="0 0 24 24" class={`h-9 w-9 sm:h-10 sm:w-10 ${iconColor.react}`}>
+                          <circle cx="12" cy="12" r="1.6" fill="currentColor" />
+                          <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" />
+                          <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(60 12 12)" />
+                          <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(120 12 12)" />
+                        </svg>
+                      )}
 
-              {bubble.icon === "laravel" && (
-                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-7 w-7 fill-none stroke-current stroke-[1.7] ${iconStyles[bubble.icon]} sm:h-8 sm:w-8`}>
-                  <path d="M7 7.5 12 4l5 3.5v6.5L12 17.5 7 14V7.5Z" stroke-linejoin="round"></path>
-                  <path d="M12 4v6.5M7 7.5l5 3.5 5-3.5M7 14l5-3.5 5 3.5M12 10.5v7" stroke-linecap="round" stroke-linejoin="round"></path>
-                </svg>
-              )}
+                      {item.icon === "next" && (
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white">
+                          <span class="text-base font-bold">N</span>
+                        </div>
+                      )}
 
-              {bubble.icon === "magento" && (
-                <span class={`text-[1.15rem] font-black tracking-[-0.06em] ${iconStyles[bubble.icon]}`}>M</span>
-              )}
+                      {item.icon === "vue" && (
+                        <svg viewBox="0 0 24 24" class={`h-9 w-9 sm:h-10 sm:w-10 ${iconColor.vue}`}>
+                          <path d="M12 4.5 18.5 16 21 12h-4l-5-8.5L7 12H3l2.5 4 6.5-11.5Z" fill="currentColor" />
+                          <path d="M12 8.2 16.2 15H7.8L12 8.2Z" fill="#34495e" />
+                        </svg>
+                      )}
 
-              {bubble.icon === "php" && (
-                <span class={`text-[0.78rem] font-extrabold italic tracking-[-0.06em] ${iconStyles[bubble.icon]}`}>
-                  php
-                </span>
-              )}
+                      {item.icon === "woo" && (
+                        <span class="rounded-md bg-[#7f54b3] px-2 py-1 text-xs font-black text-white">
+                          WOO
+                        </span>
+                      )}
 
-              {bubble.icon === "react" && (
-                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-8 w-8 ${iconStyles[bubble.icon]}`}>
-                  <circle cx="12" cy="12" r="1.6" fill="currentColor"></circle>
-                  <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6"></ellipse>
-                  <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(60 12 12)"></ellipse>
-                  <ellipse cx="12" cy="12" rx="8" ry="3.1" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(120 12 12)"></ellipse>
-                </svg>
-              )}
+                      {item.icon === "php" && (
+                        <span class={`rounded-full bg-[#e8ecff] px-2 py-1 text-sm font-black italic ${iconColor.php}`}>
+                          php
+                        </span>
+                      )}
 
-              {bubble.icon === "wordpress" && (
-                <span class={`text-[1.05rem] font-black ${iconStyles[bubble.icon]}`}>W</span>
-              )}
+                      {item.icon === "wordpress" && (
+                        <div class={`flex h-10 w-10 items-center justify-center rounded-full border-2 border-current text-xl font-black ${iconColor.wordpress}`}>
+                          W
+                        </div>
+                      )}
 
-              {bubble.icon === "shopify" && (
-                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-8 w-8 fill-none stroke-current stroke-[1.7] ${iconStyles[bubble.icon]}`}>
-                  <path d="M7.5 8.5 9.5 5h5L16.5 8.5v8.5h-9V8.5Z" stroke-linejoin="round"></path>
-                  <path d="M9.4 8.2c.2-1.4 1.3-2.4 2.6-2.4s2.4 1 2.6 2.4" stroke-linecap="round"></path>
-                  <path d="M12 11v4.2" stroke-linecap="round"></path>
-                  <path d="M10.5 12.2c.3-.6.9-1 1.6-1 .9 0 1.7.6 1.7 1.5 0 1.8-2.4 1.5-2.4 3.1 0 .7.5 1.2 1.2 1.2.5 0 1-.2 1.4-.5" stroke-linecap="round"></path>
-                </svg>
-              )}
+                      {item.icon === "magento" && (
+                        <span class={`text-2xl font-black ${iconColor.magento}`}>M</span>
+                      )}
 
-              {bubble.icon === "node" && (
-                <svg aria-hidden="true" viewBox="0 0 24 24" class={`h-8 w-8 fill-none stroke-current stroke-[1.7] ${iconStyles[bubble.icon]}`}>
-                  <path d="M12 3.5 18.5 7v7L12 17.5 5.5 14V7L12 3.5Z" stroke-linejoin="round"></path>
-                  <path d="M12 7v10.5M8.5 9.5h7M8.5 14.5h7" stroke-linecap="round"></path>
-                  <circle cx="12" cy="12" r="1.35" fill="currentColor" stroke="none"></circle>
-                </svg>
-              )}
-            </div>
+                      {item.icon === "node" && (
+                        <svg viewBox="0 0 24 24" class={`h-9 w-9 fill-none stroke-current stroke-[1.8] sm:h-10 sm:w-10 ${iconColor.node}`}>
+                          <path d="M12 3.5 18.5 7v7L12 17.5 5.5 14V7L12 3.5Z" stroke-linejoin="round" />
+                          <path d="M12 7v10.5M8.5 9.5h7M8.5 14.5h7" stroke-linecap="round" />
+                          <circle cx="12" cy="12" r="1.35" fill="currentColor" stroke="none" />
+                        </svg>
+                      )}
+
+                      {item.icon === "shopify" && (
+                        <svg viewBox="0 0 24 24" class={`h-9 w-9 fill-none stroke-current stroke-[1.8] sm:h-10 sm:w-10 ${iconColor.shopify}`}>
+                          <path d="M7.5 8.5 9.5 5h5L16.5 8.5v8.5h-9V8.5Z" stroke-linejoin="round" />
+                          <path d="M9.4 8.2c.2-1.4 1.3-2.4 2.6-2.4s2.4 1 2.6 2.4" stroke-linecap="round" />
+                          <path d="M12 11v4.2" stroke-linecap="round" />
+                        </svg>
+                      )}
+
+                      {item.icon === "laravel" && (
+                        <svg viewBox="0 0 24 24" class={`h-9 w-9 fill-none stroke-current stroke-[1.8] sm:h-10 sm:w-10 ${iconColor.laravel}`}>
+                          <path d="M7 7.5 12 4l5 3.5v6.5L12 17.5 7 14V7.5Z" stroke-linejoin="round" />
+                          <path d="M12 4v6.5M7 7.5l5 3.5 5-3.5M7 14l5-3.5 5 3.5M12 10.5v7" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      )}
+
+                    </div>
+                  </div>
+                </div>
+              ))}
           </div>
         ))}
 
-        <div class="absolute left-[13%] top-[66%] h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(27,230,217,0.95)]"></div>
-        <div class="absolute right-[13%] top-[62%] h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(27,230,217,0.95)]"></div>
+        <!-- Center logo -->
+        <div class="absolute left-1/2 top-1/2 z-20 flex h-[27%] w-[27%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#06101f]/85 shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_0_90px_rgba(39,244,239,0.25)]">
+          <div class="absolute inset-[-42%] rounded-full bg-[radial-gradient(circle,rgba(39,244,239,0.28),transparent_68%)] blur-2xl"></div>
+          <img
+            src="/img/logo_tech.svg"
+            alt="Technest logo"
+            class="relative z-10 h-[82%] w-[82%] object-contain"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="lg:pl-4">
-      <div class="mb-5 flex items-center gap-3 text-[0.82rem] font-bold uppercase tracking-[0.18em] text-cyan-300">
-        <span class="h-px w-5 bg-cyan-300/80"></span>
+    <div>
+      <div class="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">
+        <span class="h-px w-5 bg-cyan-300"></span>
         <span>Our Expertise</span>
-        <span class="h-px w-5 bg-cyan-300/80"></span>
+        <span class="h-px w-5 bg-cyan-300"></span>
       </div>
 
-      <h2 class="font-lexend text-[25px] font-extrabold lg:leading-[1.08] text-white lg:text-[50px]">
+      <h2 class="font-lexend text-[32px] font-extrabold leading-tight text-white sm:text-[44px] lg:text-[54px]">
         Trust Technest to Transform Your Vision
       </h2>
 
-      <p class="mt-5 max-w-2xl font-montserrat text-[20px] leading-8 text-white/88">
-        Choosing the right partner matters. Technest combines deep expertise in AI, cloud, and modern web development to build software that is fast, scalable, and ready to grow with your business. From startups to enterprises, we deliver clear communication, strong execution, and results you can trust.
+      <p class="mt-5 max-w-2xl font-montserrat text-[17px] leading-8 text-white/80 sm:text-[19px]">
+        Choosing the right partner matters. Technest combines deep expertise in AI, cloud,
+        and modern web development to build software that is fast, scalable, and ready to grow.
       </p>
 
-      <div class="mt-8 flex flex-wrap items-center gap-4">
-        <a
-          href="#contact"
-          class="inline-flex min-h-[3.2rem] items-center justify-center rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-8 font-montserrat text-[1rem] font-bold text-[#00111b] transition-transform duration-150 hover:-translate-y-0.5 hover:brightness-105"
-        >
-          Contact Our Experts
-        </a>
-      </div>
+      <a
+        href="#contact"
+        class="mt-8 inline-flex min-h-[52px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-8 font-montserrat text-base font-bold text-[#00111b] transition hover:-translate-y-1 hover:brightness-110"
+      >
+        Contact Our Experts
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  .orbit-layer {
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: center;
+    animation: orbitRotate var(--duration) linear infinite;
+  }
+
+  .orbit-layer--reverse {
+    animation-direction: reverse;
+  }
+
+  .orbit-marker {
+    transform: rotate(var(--angle));
+    transform-origin: center;
+  }
+
+  .orbit-card {
+    transform: translate(-50%, -50%);
+  }
+
+  .orbit-card-inner {
+    animation: keepStraight var(--duration) linear infinite;
+  }
+
+  .orbit-card-inner--reverse {
+    animation-name: keepStraightReverse;
+  }
+
+  @keyframes orbitRotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes keepStraight {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes keepStraightReverse {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .orbit-card {
+      height: 52px;
+      width: 52px;
+    }
+  }
+</style>
