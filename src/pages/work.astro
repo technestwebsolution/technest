@@ -1,9 +1,163 @@
 ---
 import Header from "../components/header.astro";
+import Footer from "../components/footer.astro";
 import Layout from "../layouts/Layout.astro";
+import { workProjects } from "../lib/work";
 ---
 
-<Layout>
+<Layout
+  title="Our Work | Technest Web Solution"
+  description="A curated selection of recent web projects delivered by Technest Web Solution."
+>
   <Header slot="header" />
-  
+
+  <main class="overflow-hidden text-white">
+    <section class="relative isolate overflow-hidden px-5 pb-14 pt-14 lg:pb-20 lg:pt-10">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0"></div>
+
+      <div class="relative mx-auto max-w-6xl">
+        <div class="mx-auto max-w-4xl text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">
+            Our Portfolio
+          </p>
+          <h1 class="mt-4 font-lexend text-[25px] font-bold leading-[0.95] text-white lg:text-[70px]">
+            Our Work
+          </h1>
+          <p class="mx-auto mt-6 max-w-3xl font-montserrat text-[1rem] leading-8 text-white/82 sm:text-[1.08rem]">
+            Explore a selection of recent projects. We build digital solutions that help businesses grow with stronger design, cleaner structure, and better performance.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+          {workProjects.map((project) => (
+            <article class="group overflow-hidden rounded-2xl border border-cyan-200/40 bg-[#0b172a] shadow-[0_24px_90px_rgba(0,0,0,0.38)] transition-transform duration-200 hover:-translate-y-1">
+              <div class="p-4 sm:p-5">
+                <div class="relative overflow-hidden rounded-2xl bg-[#d9d2c7]">
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    class="h-[240px] w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-[280px]"
+                  />
+
+                  {/* <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.18)_100%)]"></div> */}
+
+                  <div class="absolute left-4 top-4 inline-flex rounded-full border border-cyan-300/70 bg-[#04101bf2] px-3 py-1 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-cyan-300 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+                    {project.category}
+                  </div>
+                </div>
+              </div>
+
+              <div class="px-5 pb-5 pt-0 sm:px-6 sm:pb-6">
+                <div class="flex items-start gap-4">
+                  <div class="min-w-0 flex-1">
+                    <h2 class="font-lexend text-[1.35rem] font-extrabold leading-tight text-white sm:text-[1.55rem]">
+                      {project.title}
+                    </h2>
+                    <p class="mt-3 max-w-2xl font-montserrat text-[0.96rem] leading-7 text-white/80">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-cyan-300/45 bg-cyan-300/10 text-[1rem] font-black text-cyan-300 sm:h-16 sm:w-16">
+                    {project.icon === "shopify" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="M7.5 7.5h9l1.2 11.5H6.3L7.5 7.5Z" stroke-linejoin="round" />
+                        <path d="M9 7.5a3 3 0 0 1 6 0" stroke-linecap="round" />
+                        <path d="M10.3 11.3c.5-.8 1.2-1.2 2-.8.6.3 1 .8 1.8.8.8 0 1.4-.4 2-.8" stroke-linecap="round" />
+                      </svg>
+                    )}
+
+                    {project.icon === "laravel" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="M7 7.5 12 5l5 2.5V15l-5 2.5L7 15V7.5Z" stroke-linejoin="round" />
+                        <path d="M12 5v12.5M7 7.5l5 2.5 5-2.5M7 15l5-2.5 5 2.5" stroke-linecap="round" />
+                      </svg>
+                    )}
+
+                    {project.icon === "wordpress" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M9 8.8 11.2 16l1.8-4.7 1.9 4.7L17 8.8" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    )}
+
+                    {project.icon === "saas" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="M7.5 17h8.4A3.1 3.1 0 0 0 19 13.9c0-1.5-1.1-2.7-2.5-2.9A4.9 4.9 0 0 0 7.9 9.8 3.5 3.5 0 0 0 7.5 17Z" stroke-linejoin="round" />
+                        <path d="M12 11.5v4M10 13.5h4" stroke-linecap="round" />
+                      </svg>
+                    )}
+
+                    {project.icon === "code" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="m9 7-4 5 4 5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="m15 7 4 5-4 5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    )}
+
+                    {project.icon === "cart" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="M5 6h2l1.6 8.5h8.7L19 9H8" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="10" cy="18" r="1.3" fill="currentColor" stroke="none" />
+                        <circle cx="16" cy="18" r="1.3" fill="currentColor" stroke="none" />
+                      </svg>
+                    )}
+
+                    {project.icon === "figma" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="M10 4h3.2a2.8 2.8 0 1 1 0 5.6H10V4Z" stroke-linejoin="round" />
+                        <path d="M10 9.6h3.2a2.8 2.8 0 1 1 0 5.6H10V9.6Z" stroke-linejoin="round" />
+                        <path d="M10 15.2h3.2a2.8 2.8 0 1 1 0 5.6A2.8 2.8 0 0 1 10 18v-2.8Z" stroke-linejoin="round" />
+                        <path d="M10 4v17" stroke-linecap="round" />
+                      </svg>
+                    )}
+
+                    {project.icon === "launch" && (
+                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
+                        <path d="M14.5 5.5c2.2 0 4 1.8 4 4 0 2.9-2.5 6.4-6.4 10.2-.7.7-1.9.5-2.3-.4l-1-2.1-2.1-1c-.9-.4-1.1-1.6-.4-2.3C8.1 9.1 11.6 6.5 14.5 6.5Z" stroke-linejoin="round" />
+                        <path d="M10.1 14.1 7 17.2" stroke-linecap="round" />
+                        <circle cx="15.6" cy="8.8" r="1.1" fill="currentColor" stroke="none" />
+                      </svg>
+                    )}
+                  </div>
+                </div>
+
+                <div class="mt-6 border-t border-white/10 pt-5">
+                  <ul class="grid gap-3">
+                    {project.features.map((feature) => (
+                      <li class="">
+                        <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full border border-cyan-300/55 text-[0.7rem] font-black leading-none text-cyan-300" aria-hidden="true">
+                          &#10003;
+                        </span>
+                        <span class="text-[0.9rem] leading-6 text-white/80">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="mt-6">
+                  <a
+                    href="/contact"
+                    class="inline-flex items-center gap-2 rounded-full border border-cyan-300/55 px-4 py-2.5 text-sm font-bold text-cyan-300 transition-colors duration-150 hover:border-cyan-300 hover:bg-cyan-300 hover:text-[#06101f]"
+                  >
+                    <span>View Case Study</span>
+                    <span aria-hidden="true" class="text-[1rem] leading-none">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- image  -->
+
+    <img src="/img/work.webp" alt="Our Work" class="mx-auto mt-10 w-full max-w-6xl rounded-2xl border border-cyan-300/40 shadow-[0_24px_90px_rgba(0,0,0,0.38)] sm:mt-14" />
+  </main>
+
+  <Footer slot="footer" />
 </Layout>
