@@ -14,7 +14,7 @@ export const workProjects: WorkProject[] = [
     title: "Perfumora",
     description:
       "Perfumora is a modern wholesale fragrance eCommerce platform built on Shopify for retailers and businesses. It offers a seamless shopping experience with a responsive interface, fast performance, advanced product filtering, and a secure checkout process.",
-    image: "/img/about-img.webp",
+    image: "/img/perfumora.png",
     alt: "Perfume Direct portfolio preview",
     icon: "shopify",
     features: [
@@ -28,7 +28,7 @@ export const workProjects: WorkProject[] = [
     title: "Dwarkas Jewellery",
     description:
       "Dwarkas Jewellery is a premium Shopify-based jewellery eCommerce platform designed to deliver a luxurious online shopping experience. The website combines elegant visuals, intuitive navigation, responsive design, and secure shopping to help customers explore and purchase fine jewellery with ease.",
-    image: "/img/background_img.jpg",
+    image: "/img/dwarkas.png",
     alt: "Stealth Belt portfolio preview",
     icon: "laravel",
     features: [
@@ -42,7 +42,7 @@ export const workProjects: WorkProject[] = [
     title: "SAI Finance",
     description:
       "A high-performance financial platform created to showcase investment, insurance, and financial planning services through a clean, user-friendly, and SEO-optimized experience.",
-    image: "/img/about.webp",
+    image: "/img/saifanace1.png",
     alt: "Homex portfolio preview",
     icon: "wordpress",
     features: [
@@ -70,7 +70,7 @@ export const workProjects: WorkProject[] = [
     title: "Design Mohalla",
     description:
       "A modern Shopify fashion eCommerce website designed to deliver a seamless shopping experience with stylish UI, responsive design, and optimized performance.",
-    image: "/img/about-img.webp",
+    image: "/img/design-3.png",
     alt: "Nova Health portfolio preview",
     icon: "code",
     features: [
@@ -84,7 +84,7 @@ export const workProjects: WorkProject[] = [
     title: "Mahaarajaa",
     description:
       "Mahaarajaa is a premium Shopify eCommerce website for high-quality dry fruits and healthy snacks. It delivers a fast, responsive, and SEO-friendly shopping experience with a clean, modern design.",
-    image: "/img/background_img.jpg",
+    image: "/img/mahaarajja.png",
     alt: "Mellow Cart portfolio preview",
     icon: "cart",
     features: [
@@ -98,7 +98,7 @@ export const workProjects: WorkProject[] = [
     title: "Helox Power",
     description:
       "Helox Power is a modern business website for the energy sector, built with Laravel and Vue.js. It features a responsive design, fast performance, and an SEO-friendly architecture.",
-    image: "/img/about.webp",
+    image: "/img/helox.png",
     alt: "Atlas Studio portfolio preview",
     icon: "figma",
     features: [
@@ -112,7 +112,7 @@ export const workProjects: WorkProject[] = [
     title: "Vr5 Luxury",
     description:
       "VR5 Luxury is a premium resort website with a modern, responsive design. It showcases luxury accommodations and amenities while delivering a fast and seamless user experience.",
-    image: "/img/about_img.webp",
+    image: "/img/vr5.png",
     alt: "Velocity Launch portfolio preview",
     icon: "launch",
     features: [

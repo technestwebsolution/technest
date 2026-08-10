@@ -6,229 +6,805 @@ import { workProjects } from "../lib/work";
 ---
 
 <Layout
-  title="Our Work | Technest Web Solution"
-  description="A curated selection of recent web projects delivered by Technest Web Solution."
+	title="Our Work | Technest Web Solution"
+	description="A curated selection of recent web projects delivered by Technest Web Solution."
 >
-  <Header slot="header" />
+	<Header slot="header" />
 
-  <main class="overflow-hidden text-white">
-    <section class="relative isolate overflow-hidden px-5 pb-14 pt-14 lg:pb-20 lg:pt-10">
-      <div aria-hidden="true" class="pointer-events-none absolute inset-0"></div>
+	<main class="overflow-hidden text-white">
+		<section
+			class="relative isolate overflow-hidden px-5 pb-14 pt-14 lg:pb-20 lg:pt-10"
+		>
+			<div
+				aria-hidden="true"
+				class="pointer-events-none absolute inset-0"
+			></div>
 
-      <div class="relative mx-auto max-w-6xl">
-        <div class="mx-auto max-w-4xl text-center">
-          <p class="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">
-            Our Portfolio
-          </p>
-          <h1 class="mt-4 font-lexend text-[25px] font-bold leading-[0.95] text-white lg:text-[70px]">
-            Our Work
-          </h1>
-          <p class="mx-auto mt-6 max-w-3xl font-montserrat text-[1rem] leading-8 text-white/82 sm:text-[1.08rem]">
-            Explore a selection of recent projects. We build digital solutions that help businesses grow with stronger design, cleaner structure, and better performance.
-          </p>
-        </div>
+			<div class="relative mx-auto max-w-6xl">
+				<!-- Heading -->
+				<div class="mx-auto max-w-4xl text-center">
+					<p
+						class="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300"
+					>
+						Our Portfolio
+					</p>
 
-        <div class="mt-12 grid gap-6 lg:grid-cols-2">
-          {workProjects.map((project) => (
-            <article class="group overflow-hidden rounded-2xl border border-cyan-200/40 bg-[#0b172a] shadow-[0_24px_90px_rgba(0,0,0,0.38)] transition-transform duration-200 hover:-translate-y-1">
-              <div class="p-4 sm:p-5">
-                <div class="relative overflow-hidden rounded-2xl bg-[#d9d2c7]">
-                  <img
-                    src={project.image}
-                    alt={project.alt}
-                    class="h-[240px] w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.03] sm:h-[280px]"
-                  />
+					<h1
+						class="mt-4 font-lexend text-[25px] font-bold leading-[0.95] text-white lg:text-[70px]"
+					>
+						Our Work
+					</h1>
 
-                  {/* <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.18)_100%)]"></div> */}
+					<p
+						class="mx-auto mt-6 max-w-3xl font-montserrat text-[1rem] leading-8 text-white/80 sm:text-[1.08rem]"
+					>
+						Explore a selection of recent projects. We build digital
+						solutions that help businesses grow with stronger
+						design, cleaner structure, and better performance.
+					</p>
+				</div>
 
-                  <div class="absolute left-4 top-4 inline-flex rounded-full border border-cyan-300/70 bg-[#04101bf2] px-3 py-1 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-cyan-300 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
-                    {project.category}
-                  </div>
-                </div>
-              </div>
+				<!-- ================================
+					PROJECT CARDS
+				================================ -->
+				<div
+					class="
+						mt-12
+						grid
+						grid-cols-1
+						justify-items-center
+						gap-7
+						lg:grid-cols-2
+					"
+				>
+					{
+						workProjects.map((project) => (
+							<article
+								class="
+									group
+									relative
+									w-[400px]
+									max-w-full
+									overflow-hidden
+									rounded-2xl
+									border
+									border-cyan-200/40
+									bg-[#0b172a]
+									shadow-[0_24px_90px_rgba(0,0,0,0.38)]
+									transition-all
+									duration-500
 
-              <div class="px-5 pb-5 pt-0 sm:px-6 sm:pb-6">
-                <div class="flex items-start gap-4">
-                  <div class="min-w-0 flex-1">
-                    <h2 class="font-lexend text-[1.35rem] font-extrabold leading-tight text-white sm:text-[1.55rem]">
-                      {project.title}
-                    </h2>
-                    <p class="mt-3 max-w-2xl font-montserrat text-[0.96rem] leading-7 text-white/80">
-                      {project.description}
-                    </p>
-                  </div>
+									hover:-translate-y-1
+									hover:border-cyan-300/70
+									hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)]
+								"
+							>
+								<!-- =================================
+									NORMAL CARD CONTENT
 
-                  <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-cyan-300/45 bg-cyan-300/10 text-[1rem] font-black text-cyan-300 sm:h-16 sm:w-16">
-                    {project.icon === "shopify" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="M7.5 7.5h9l1.2 11.5H6.3L7.5 7.5Z" stroke-linejoin="round" />
-                        <path d="M9 7.5a3 3 0 0 1 6 0" stroke-linecap="round" />
-                        <path d="M10.3 11.3c.5-.8 1.2-1.2 2-.8.6.3 1 .8 1.8.8.8 0 1.4-.4 2-.8" stroke-linecap="round" />
-                      </svg>
-                    )}
+									HOVER PAR:
+									HIDE THASE
+								================================= -->
+								<div
+									class="
+										flex
+										min-h-[560px]
+										flex-col
+										transition-all
+										duration-500
+										ease-in-out
 
-                    {project.icon === "laravel" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="M7 7.5 12 5l5 2.5V15l-5 2.5L7 15V7.5Z" stroke-linejoin="round" />
-                        <path d="M12 5v12.5M7 7.5l5 2.5 5-2.5M7 15l5-2.5 5 2.5" stroke-linecap="round" />
-                      </svg>
-                    )}
+										group-hover:scale-[0.96]
+										group-hover:opacity-0
+									"
+								>
+									<!-- IMAGE -->
+									<div class="p-5 sm:p-6">
+										<div
+											class="
+												relative
+												flex
+												lg:h-[575px]
+												w-full
+												items-center
+												justify-center
+												overflow-hidden
+												rounded-2xl
+												bg-transparent
+                        h-full
+											"
+										>
+											<img
+												src={project.image}
+												alt={project.alt}
+												loading="lazy"
+												class="
+													h-full
+													w-full
+													object-contain
+													object-center
+													transition-transform
+													duration-700
+												"
+											/>
 
-                    {project.icon === "wordpress" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M9 8.8 11.2 16l1.8-4.7 1.9 4.7L17 8.8" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    )}
+											<!-- Category -->
+											<div
+												class="
+													absolute
+													left-4
+													top-4
+													inline-flex
+													rounded-full
+													border
+													border-cyan-300/70
+													bg-[#04101bf2]
+													px-3
+													py-1.5
+													text-[0.70rem]
+													font-bold
+													uppercase
+													tracking-[0.18em]
+													text-cyan-300
+													shadow-[0_10px_30px_rgba(0,0,0,0.22)]
+												"
+											>
+												{project.category}
+											</div>
+										</div>
+									</div>
 
-                    {project.icon === "saas" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="M7.5 17h8.4A3.1 3.1 0 0 0 19 13.9c0-1.5-1.1-2.7-2.5-2.9A4.9 4.9 0 0 0 7.9 9.8 3.5 3.5 0 0 0 7.5 17Z" stroke-linejoin="round" />
-                        <path d="M12 11.5v4M10 13.5h4" stroke-linecap="round" />
-                      </svg>
-                    )}
+									<!-- CONTENT -->
+									<div
+										class="
+											flex
+											flex-1
+											flex-col
+											px-5
+											pb-6
+											pt-0
+										"
+									>
+										<div class="flex items-start gap-4">
+											<!-- TITLE + DESCRIPTION -->
+											<div class="min-w-0 flex-1">
+												<h2
+													class="
+														font-lexend
+														text-[1.35rem]
+														font-extrabold
+														leading-tight
+														text-white
 
-                    {project.icon === "code" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="m9 7-4 5 4 5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="m15 7 4 5-4 5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                    )}
+														sm:text-[1.55rem]
+													"
+												>
+													{project.title}
+												</h2>
 
-                    {project.icon === "cart" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="M5 6h2l1.6 8.5h8.7L19 9H8" stroke-linecap="round" stroke-linejoin="round" />
-                        <circle cx="10" cy="18" r="1.3" fill="currentColor" stroke="none" />
-                        <circle cx="16" cy="18" r="1.3" fill="currentColor" stroke="none" />
-                      </svg>
-                    )}
+												<p
+													class="
+														mt-3
+														font-montserrat
+														text-[0.96rem]
+														leading-6
+														text-white/80
+                            text-justify
+													"
+												>
+													{project.description}
+												</p>
+											</div>
 
-                    {project.icon === "figma" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="M10 4h3.2a2.8 2.8 0 1 1 0 5.6H10V4Z" stroke-linejoin="round" />
-                        <path d="M10 9.6h3.2a2.8 2.8 0 1 1 0 5.6H10V9.6Z" stroke-linejoin="round" />
-                        <path d="M10 15.2h3.2a2.8 2.8 0 1 1 0 5.6A2.8 2.8 0 0 1 10 18v-2.8Z" stroke-linejoin="round" />
-                        <path d="M10 4v17" stroke-linecap="round" />
-                      </svg>
-                    )}
+											<!-- ICON -->
+											{/* <div
+												class="
+													flex
+													h-14
+													w-14
+													shrink-0
+													items-center
+													justify-center
+													rounded-full
+													border
+													border-cyan-300/45
+													bg-cyan-300/10
+													text-cyan-300
 
-                    {project.icon === "launch" && (
-                      <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-[1.7]">
-                        <path d="M14.5 5.5c2.2 0 4 1.8 4 4 0 2.9-2.5 6.4-6.4 10.2-.7.7-1.9.5-2.3-.4l-1-2.1-2.1-1c-.9-.4-1.1-1.6-.4-2.3C8.1 9.1 11.6 6.5 14.5 6.5Z" stroke-linejoin="round" />
-                        <path d="M10.1 14.1 7 17.2" stroke-linecap="round" />
-                        <circle cx="15.6" cy="8.8" r="1.1" fill="currentColor" stroke="none" />
-                      </svg>
-                    )}
-                  </div>
-                </div>
+													sm:h-16
+													sm:w-16
+												"
+											>
+												{project.icon === "shopify" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="M7.5 7.5h9l1.2 11.5H6.3L7.5 7.5Z"
+															stroke-linejoin="round"
+														/>
 
-                <div class="mt-6 border-t border-white/10 pt-5">
-                  <ul class="grid gap-3">
-                    {project.features.map((feature) => (
-                      <li class="">
-                        <span class="mt-1 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full border border-cyan-300/55 text-[0.7rem] font-black leading-none text-cyan-300" aria-hidden="true">
-                          &#10003;
-                        </span>
-                        <span class="text-[0.9rem] leading-6 text-white/80">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+														<path
+															d="M9 7.5a3 3 0 0 1 6 0"
+															stroke-linecap="round"
+														/>
 
-                <div class="mt-6">
-                  <a
-                    href="/contact"
-                    class="inline-flex items-center gap-2 rounded-full border border-cyan-300/55 px-4 py-2.5 text-sm font-bold text-cyan-300 transition-colors duration-150 hover:border-cyan-300 hover:bg-cyan-300 hover:text-[#06101f]"
-                  >
-                    <span>View Case Study</span>
-                    <span aria-hidden="true" class="text-[1rem] leading-none">&rarr;</span>
-                  </a>
-                </div>
-              </article>
-            ))}
-        </div>
-      </div>
-    </section>
+														<path
+															d="M10.3 11.3c.5-.8 1.2-1.2 2-.8.6.3 1 .8 1.8.8.8 0 1.4-.4 2-.8"
+															stroke-linecap="round"
+														/>
+													</svg>
+												)}
 
-    <section class="px-5 pb-18 pt-2 lg:pb-24">
-      <div class="mx-auto max-w-7xl">
-        <div class="grid items-center gap-8 overflow-hidden rounded-[2rem] border border-cyan-300/18 bg-[linear-gradient(180deg,#07111f_0%,#050b16_100%)] px-5 py-6 shadow-[0_28px_100px_rgba(0,0,0,0.4)] sm:px-7 sm:py-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-          <div class="order-2 lg:order-1">
-            <p class="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300">
-              Our Work
-            </p>
+												{project.icon === "laravel" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="M7 7.5 12 5l5 2.5V15l-5 2.5L7 15V7.5Z"
+															stroke-linejoin="round"
+														/>
 
-            <h2 class="mt-4 max-w-xl font-lexend text-[2rem] font-extrabold leading-[1.05] text-white sm:text-[2.8rem] lg:text-[3.4rem]">
-              Delivering Digital Solutions That Drive Real Results
-            </h2>
+														<path
+															d="M12 5v12.5M7 7.5l5 2.5 5-2.5M7 15l5-2.5 5 2.5"
+															stroke-linecap="round"
+														/>
+													</svg>
+												)}
 
-            <p class="mt-5 max-w-xl font-montserrat text-[0.98rem] leading-8 text-white/80 sm:text-[1.04rem]">
-              From eCommerce stores to SaaS platforms, we turn ideas into powerful digital products. We align the content with the image so the section feels balanced, readable, and premium.
-            </p>
+												{project.icon ===
+													"wordpress" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<circle
+															cx="12"
+															cy="12"
+															r="9"
+														/>
 
-            <a
-              href="/contact"
-              class="mt-7 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-6 py-3.5 text-sm font-extrabold text-[#04101b] shadow-[0_16px_40px_rgba(16,192,255,0.26)] transition-transform duration-150 hover:-translate-y-0.5"
-            >
-              Start Your Project
-              <span aria-hidden="true" class="text-base leading-none">&rarr;</span>
-            </a>
+														<path
+															d="M9 8.8 11.2 16l1.8-4.7 1.9 4.7L17 8.8"
+															stroke-linecap="round"
+															stroke-linejoin="round"
+														/>
+													</svg>
+												)}
 
-            <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center">
-                <div class="text-2xl font-black text-cyan-300">50+</div>
-                <div class="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-white/68">Projects Delivered</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center">
-                <div class="text-2xl font-black text-cyan-300">6+</div>
-                <div class="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-white/68">Technologies</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center">
-                <div class="text-2xl font-black text-cyan-300">30+</div>
-                <div class="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-white/68">Happy Clients</div>
-              </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-center">
-                <div class="text-2xl font-black text-cyan-300">100%</div>
-                <div class="mt-1 text-xs font-medium uppercase tracking-[0.16em] text-white/68">Commitment</div>
-              </div>
-            </div>
-          </div>
+												{project.icon === "saas" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="M7.5 17h8.4A3.1 3.1 0 0 0 19 13.9c0-1.5-1.1-2.7-2.5-2.9A4.9 4.9 0 0 0 7.9 9.8 3.5 3.5 0 0 0 7.5 17Z"
+															stroke-linejoin="round"
+														/>
 
-          <div class="order-1 lg:order-2">
-            <div class="relative overflow-hidden rounded-[1.7rem] border border-cyan-300/22 bg-[#06101b] p-3 sm:p-4">
-              <img
-                src="/img/work.webp"
-                alt="Our Work"
-                class="h-[290px] w-full rounded-[1.35rem] object-cover object-center sm:h-[360px] lg:h-[460px]"
-              />
+														<path
+															d="M12 11.5v4M10 13.5h4"
+															stroke-linecap="round"
+														/>
+													</svg>
+												)}
 
-              <div class="absolute left-6 top-6 rounded-full border border-cyan-300/60 bg-[#04101be6] px-4 py-2 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-cyan-300">
-                Featured Work
-              </div>
+												{project.icon === "code" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="m9 7-4 5 4 5"
+															stroke-linecap="round"
+															stroke-linejoin="round"
+														/>
 
-              <div class="absolute bottom-6 left-6 right-6 rounded-[1.15rem] border border-white/10 bg-[#06101be6] px-4 py-4 backdrop-blur-md sm:px-5">
-                <div class="flex items-end justify-between gap-4">
-                  <div>
-                    <p class="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-white/60">
-                      UI + Content
-                    </p>
-                    <p class="mt-1 font-lexend text-[1rem] font-bold text-white sm:text-[1.15rem]">
-                      Balanced layout with clean visual hierarchy
-                    </p>
-                  </div>
-                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan-300/45 bg-cyan-300/10 text-cyan-300">
-                    <span class="text-base leading-none">&rarr;</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+														<path
+															d="m15 7 4 5-4 5"
+															stroke-linecap="round"
+															stroke-linejoin="round"
+														/>
+													</svg>
+												)}
 
-  <Footer slot="footer" />
+												{project.icon === "cart" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="M5 6h2l1.6 8.5h8.7L19 9H8"
+															stroke-linecap="round"
+															stroke-linejoin="round"
+														/>
+
+														<circle
+															cx="10"
+															cy="18"
+															r="1.3"
+															fill="currentColor"
+															stroke="none"
+														/>
+
+														<circle
+															cx="16"
+															cy="18"
+															r="1.3"
+															fill="currentColor"
+															stroke="none"
+														/>
+													</svg>
+												)}
+
+												{project.icon === "figma" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="M10 4h3.2a2.8 2.8 0 1 1 0 5.6H10V4Z"
+															stroke-linejoin="round"
+														/>
+
+														<path
+															d="M10 9.6h3.2a2.8 2.8 0 1 1 0 5.6H10V9.6Z"
+															stroke-linejoin="round"
+														/>
+
+														<path
+															d="M10 15.2h3.2a2.8 2.8 0 1 1 0 5.6A2.8 2.8 0 0 1 10 18v-2.8Z"
+															stroke-linejoin="round"
+														/>
+
+														<path
+															d="M10 4v17"
+															stroke-linecap="round"
+														/>
+													</svg>
+												)}
+
+												{project.icon === "launch" && (
+													<svg
+														viewBox="0 0 24 24"
+														class="h-7 w-7 fill-none stroke-current stroke-[1.7]"
+													>
+														<path
+															d="M14.5 5.5c2.2 0 4 1.8 4 4 0 2.9-2.5 6.4-6.4 10.2-.7.7-1.9.5-2.3-.4l-1-2.1-2.1-1c-.9-.4-1.1-1.6-.4-2.3C8.1 9.1 11.6 6.5 14.5 6.5Z"
+															stroke-linejoin="round"
+														/>
+
+														<path
+															d="M10.1 14.1 7 17.2"
+															stroke-linecap="round"
+														/>
+
+														<circle
+															cx="15.6"
+															cy="8.8"
+															r="1.1"
+															fill="currentColor"
+															stroke="none"
+														/>
+													</svg>
+												)}
+											</div> */}
+										</div>
+
+										<!-- BUTTON -->
+										<div class="mt-auto pt-6">
+											<a
+												href="/contact"
+												class="
+													inline-flex
+													items-center
+													gap-2
+													rounded-full
+													border
+													border-cyan-300/55
+													px-4
+													py-2.5
+													text-sm
+													font-bold
+													text-cyan-300
+													transition-all
+													duration-300
+
+													hover:border-cyan-300
+													hover:bg-cyan-300
+													hover:text-[#06101f]
+												"
+											>
+												<span>
+													View Case Study
+												</span>
+
+												<span
+													aria-hidden="true"
+													class="text-[1rem] leading-none"
+												>
+													&rarr;
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- =================================
+									HOVER OVERLAY
+
+									AKHA CARD PAR HOVER KARTA:
+									ONLY 3 KEYS SHOW THASE
+								================================= -->
+								<div
+									class="
+										pointer-events-none
+										absolute
+										inset-0
+										z-20
+										flex
+										scale-[1.04]
+										items-center
+										justify-center
+										bg-[#071525]/95
+										p-8
+										opacity-0
+										backdrop-blur-sm
+										transition-all
+										duration-500
+										ease-out
+
+										group-hover:scale-100
+										group-hover:opacity-100
+									"
+								>
+									<div class="w-full">
+										<!-- Small heading -->
+										<p
+											class="
+												text-center
+												text-xs
+												font-bold
+												uppercase
+												tracking-[0.25em]
+												text-cyan-300
+											"
+										>
+											Key Features
+										</p>
+
+										<!-- Project Title -->
+										<h3
+											class="
+												mt-3
+												text-center
+												font-lexend
+												text-[1.7rem]
+												font-extrabold
+												text-white
+											"
+										>
+											{project.title}
+										</h3>
+
+										<!-- Line -->
+										<div
+											class="
+												mx-auto
+												mt-5
+												h-px
+												w-16
+												bg-cyan-300/50
+											"
+										></div>
+
+										<!-- 3 FEATURES -->
+										<ul class="mt-8 grid gap-4">
+											{
+												project.features
+													.slice(0, 3)
+													.map(
+														(
+															feature,
+															index,
+														) => (
+															<li
+																class="
+																	flex
+																	translate-y-4
+																	items-start
+																	gap-4
+																	rounded-xl
+																	border
+																	border-white/10
+																	bg-white/[0.04]
+																	p-4
+																	opacity-0
+																	transition-all
+																	duration-500
+
+																	group-hover:translate-y-0
+																	group-hover:opacity-100
+																"
+																style={`transition-delay: ${
+																	100 +
+																	index *
+																		100
+																}ms`}
+															>
+																<!-- CHECK -->
+																<span
+																	class="
+																		mt-[2px]
+																		flex
+																		h-7
+																		w-7
+																		shrink-0
+																		items-center
+																		justify-center
+																		rounded-full
+																		border
+																		border-cyan-300/60
+																		bg-cyan-300/10
+																		text-xs
+																		font-black
+																		text-cyan-300
+																	"
+																>
+																	&#10003;
+																</span>
+
+																<!-- FEATURE -->
+																<span
+																	class="
+																		font-montserrat
+																		text-[0.95rem]
+																		font-medium
+																		leading-6
+																		text-white/90
+																	"
+																>
+																	{
+																		feature
+																	}
+																</span>
+															</li>
+														),
+													)
+											}
+										</ul>
+									</div>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- =========================================
+			BOTTOM SECTION
+		========================================= -->
+		<section class="px-5 pb-18 pt-2 lg:pb-24">
+			<div class="mx-auto max-w-7xl">
+				<div
+					class="
+						grid
+						items-center
+						lg:gap-8
+            gap-4
+						overflow-hidden
+						rounded-[2rem]
+						border
+						border-cyan-300/20
+						bg-[linear-gradient(180deg,#07111f_0%,#050b16_100%)]
+						px-5
+						py-6
+						shadow-[0_28px_100px_rgba(0,0,0,0.4)]
+						lg:grid-cols-[0.95fr_1.05fr]
+						lg:px-8
+					"
+				>
+					<!-- LEFT -->
+					<div class="order-2 lg:order-1">
+						<p
+							class="text-sm font-bold uppercase tracking-[0.28em] text-cyan-300"
+						>
+							Our Work
+						</p>
+
+						<h2
+							class="
+								mt-4
+								max-w-xl
+								font-lexend
+								lg:text-[28px]
+                text-[18px]
+								font-extrabold
+								lg:leading-[1.05]
+								text-white
+							"
+						>
+							Delivering Digital Solutions That Drive Real Results
+						</h2>
+
+						<p
+							class="
+								mt-5
+								max-w-xl
+								font-montserrat
+								text-[0.98rem]
+								lg:leading-8
+								text-white/80
+							"
+						>
+							From eCommerce stores to SaaS platforms, we turn
+							ideas into powerful digital products. We align the
+							content with the image so the section feels
+							balanced, readable, and premium.
+						</p>
+
+						<a
+							href="/contact"
+							class="
+								lg:mt-7
+                mt-3
+								inline-flex
+								items-center
+								gap-2
+								rounded-full
+								bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)]
+								px-6
+								py-3.5
+								text-sm
+								font-extrabold
+								text-[#04101b]
+								shadow-[0_16px_40px_rgba(16,192,255,0.26)]
+								transition-transform
+								duration-150
+								hover:-translate-y-0.5
+							"
+						>
+							Start Your Project
+
+							<span aria-hidden="true">
+								&rarr;
+							</span>
+						</a>
+
+						<div
+							class="
+								mt-8
+								grid
+								grid-cols-2
+								gap-3
+								sm:grid-cols-4
+							"
+						>
+							<div
+								class="
+									rounded-2xl
+									border
+									border-white/10
+									bg-white/5
+									px-4
+									py-4
+									text-center
+								"
+							>
+								<div
+									class="text-2xl font-black text-cyan-300"
+								>
+									50+
+								</div>
+
+								<div
+									class="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/70"
+								>
+									Projects Delivered
+								</div>
+							</div>
+
+							<div
+								class="
+									rounded-2xl
+									border
+									border-white/10
+									bg-white/5
+									px-4
+									py-4
+									text-center
+								"
+							>
+								<div
+									class="text-2xl font-black text-cyan-300"
+								>
+									6+
+								</div>
+
+								<div
+									class="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/70"
+								>
+									Technologies
+								</div>
+							</div>
+
+							<div
+								class="
+									rounded-2xl
+									border
+									border-white/10
+									bg-white/5
+									px-4
+									py-4
+									text-center
+								"
+							>
+								<div
+									class="text-2xl font-black text-cyan-300"
+								>
+									30+
+								</div>
+
+								<div
+									class="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/70"
+								>
+									Happy Clients
+								</div>
+							</div>
+
+							<div
+								class="
+									rounded-2xl
+									border
+									border-white/10
+									bg-white/5
+									px-4
+									py-4
+									text-center
+								"
+							>
+								<div
+									class="text-2xl font-black text-cyan-300"
+								>
+									100%
+								</div>
+
+								<div
+									class="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-white/70"
+								>
+									Commitment
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- RIGHT IMAGE -->
+					<div class="order-1 lg:order-2">
+						
+						
+							<img
+								src="/img/work.webp"
+								alt="Our Work"
+								class="
+									h-auto
+									max-h-[460px]
+									w-full
+									rounded-[1.35rem]
+									object-contain
+									object-center
+								"
+							/>
+
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer slot="footer" />
 </Layout>
