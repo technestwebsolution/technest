@@ -8,7 +8,7 @@ const navItems = [
 ];
 ---
 
-<header class="relative overflow-hidden text-white">
+<header data-mobile-menu-root class="relative overflow-hidden text-white">
   <div
     aria-hidden="true"
     class="pointer-events-none absolute inset-0"
@@ -95,36 +95,113 @@ const navItems = [
         <span aria-hidden="true" class="text-[1.45rem] leading-none">&gt;</span>
       </a>
 
-      <details class="relative ml-auto lg:hidden">
-        <summary class="list-none cursor-pointer rounded-[0.95rem] border border-white/[0.15] bg-white/[0.05] p-3 text-white/[0.9] [&::-webkit-details-marker]:hidden">
-          <span class="flex flex-col gap-1">
-            <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-            <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-            <span class="block h-0.5 w-5 rounded-full bg-current"></span>
-          </span>
-        </summary>
-
-        <div class="absolute right-0 top-[calc(100%+0.75rem)] z-20 w-[min(19rem,calc(100vw-2rem))] rounded-[1.2rem] border border-white/[0.15] bg-[#06101bf5] p-4 shadow-[0_24px_50px_rgba(0,0,0,0.35)] backdrop-blur-xl">
-          <nav aria-label="Mobile navigation" class="grid gap-1">
-            {navItems.map((item) => (
-              <a
-                href={item.href}
-                class="rounded-[0.85rem] px-4 py-3 font-bold text-white no-underline transition-colors duration-150 hover:bg-white/[0.07] hover:text-cyan-300"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <a
-            href="/contact"
-            class="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-6 py-4 font-bold text-[#00111b] transition-transform duration-150 hover:-translate-y-0.5 hover:brightness-105 font-montserrat"
-          >
-            <span>Get a Quote</span>
-            <span aria-hidden="true" class="text-[1.45rem] leading-none">&gt;</span>
-          </a>
-        </div>
-      </details>
+      <button
+        type="button"
+        data-mobile-menu-open
+        aria-controls="mobile-menu-drawer"
+        aria-expanded="false"
+        class="relative ml-auto inline-flex rounded-[0.95rem] border border-white/[0.15] bg-white/[0.05] p-3 text-white/[0.9] transition-colors duration-150 hover:border-cyan-300 hover:text-cyan-300 lg:hidden"
+      >
+        <span class="sr-only">Open menu</span>
+        <span class="flex flex-col gap-1">
+          <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+          <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+        </span>
+      </button>
     </div>
   </div>
 </header>
+
+<div
+  data-mobile-menu-backdrop
+  class="fixed inset-0 z-40 hidden bg-[#020814cc] opacity-0 transition-opacity duration-300 lg:hidden"
+  aria-hidden="true"
+></div>
+
+<aside
+  id="mobile-menu-drawer"
+  data-mobile-menu-drawer
+  aria-hidden="true"
+  class="fixed inset-y-0 right-0 z-50 flex w-[min(20rem,88vw)] translate-x-full flex-col border-l border-white/[0.1] bg-[#06101bf8] p-5 text-white shadow-[0_30px_90px_rgba(0,0,0,0.45)] transition-transform duration-300 ease-out backdrop-blur-xl lg:hidden"
+>
+  <div class="flex items-center justify-between border-b border-white/[0.12] pb-4">
+    <span class="text-xs font-semibold uppercase tracking-[0.18em] text-white/[0.55]">Menu</span>
+    <button
+      type="button"
+      data-mobile-menu-close
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.14] text-white/[0.85] transition-colors duration-150 hover:border-cyan-300 hover:text-cyan-300"
+      aria-label="Close menu"
+    >
+      <span class="text-2xl leading-none">&times;</span>
+    </button>
+  </div>
+
+  <nav aria-label="Mobile navigation" class="mt-5 grid gap-2">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class="rounded-[0.95rem] px-4 py-3 text-[1.05rem] font-bold text-white no-underline transition-colors duration-150 hover:bg-white/[0.07] hover:text-cyan-300"
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+
+  <a
+    href="/contact"
+    class="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-6 py-4 font-bold text-[#00111b] transition-transform duration-150 hover:-translate-y-0.5 hover:brightness-105 font-montserrat"
+  >
+    <span>Get a Quote</span>
+    <span aria-hidden="true" class="text-[1.45rem] leading-none">&gt;</span>
+  </a>
+</aside>
+
+<script is:inline>
+  const headerRoot = document.querySelector("[data-mobile-menu-root]");
+
+  if (headerRoot) {
+    const openButton = headerRoot.querySelector("[data-mobile-menu-open]");
+    const closeButton = document.querySelector("[data-mobile-menu-close]");
+    const drawer = document.querySelector("[data-mobile-menu-drawer]");
+    const backdrop = document.querySelector("[data-mobile-menu-backdrop]");
+    if (openButton && closeButton && drawer && backdrop) {
+      const links = drawer.querySelectorAll("a");
+
+      const setMenuState = (isOpen) => {
+        drawer.classList.toggle("translate-x-0", isOpen);
+        drawer.classList.toggle("translate-x-full", !isOpen);
+        backdrop.classList.toggle("hidden", !isOpen);
+        backdrop.classList.toggle("opacity-0", !isOpen);
+        backdrop.classList.toggle("opacity-100", isOpen);
+        backdrop.classList.toggle("pointer-events-none", !isOpen);
+        backdrop.classList.toggle("pointer-events-auto", isOpen);
+        drawer.setAttribute("aria-hidden", String(!isOpen));
+        openButton.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("overflow-hidden", isOpen);
+      };
+
+      openButton.addEventListener("click", () => {
+        setMenuState(!drawer.classList.contains("translate-x-0"));
+      });
+
+      closeButton.addEventListener("click", () => setMenuState(false));
+      backdrop.addEventListener("click", () => setMenuState(false));
+      links.forEach((link) => {
+        link.addEventListener("click", () => setMenuState(false));
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuState(false);
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 1024) {
+          setMenuState(false);
+        }
+      });
+    }
+  }
+</script>
