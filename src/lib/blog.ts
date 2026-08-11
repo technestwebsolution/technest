@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     title: "Why Laravel is the Best PHP Framework for Building SaaS Products",
     excerpt:
       "Discover why Laravel is becoming the go-to framework for building blazing fast websites in 2026 and how it helps modern teams ship reliable web products.",
-    image: "/img/about-img.webp",
+    image: "/img/blog1.jpeg",
     alt: "Laravel blog feature image",
     link: "/blog/laravel-best-php-framework-saas-products",
     content: `
@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     title: "What is Astro JS and Why is it the Fastest Way to Build Websites in 2025?",
     excerpt:
       "Discover why Astro JS is becoming the go-to framework for building blazing fast websites in 2025 and how it outperforms older approaches for modern development.",
-    image: "/img/background_img.jpg",
+    image: "/img/blog2.jpg",
     alt: "Astro blog feature image",
     link: "/blog/astro-js-fastest-way-build-websites-2025",
     content: `

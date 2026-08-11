@@ -3,6 +3,64 @@ import Header from "../components/header.astro";
 import Footer from "../components/footer.astro";
 import Layout from "../layouts/Layout.astro";
 import { workProjects } from "../lib/work";
+
+const platformIcons = {
+	shopify: {
+		kind: "image",
+		src: "/img/shopify-color-svgrepo-com.svg",
+		label: "Shopify",
+	},
+	wordPress: {
+		kind: "image",
+		src: "/img/wordpress-svgrepo-com.svg",
+		label: "WordPress",
+	},
+	wordpress: {
+		kind: "image",
+		src: "/img/wordpress-svgrepo-com.svg",
+		label: "WordPress",
+	},
+	laravel: {
+		kind: "image",
+		src: "/img/laravel-svgrepo-com-1.svg",
+		label: "Laravel",
+	},
+	saas: {
+		kind: "image",
+		src: "/img/saas-icon.svg",
+		label: "SaaS",
+	},
+	code: {
+		kind: "svg",
+		label: "Code",
+		path: "M8 9 4 12l4 3M16 9l4 3-4 3M14 6 10 18",
+	},
+	cart: {
+		kind: "svg",
+		label: "Cart",
+		path: "M3.5 5.5h2l1.7 8.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 1.9-1.4l1.8-5.8H7.1M9 20.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm8 0a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z",
+	},
+	figma: {
+		kind: "svg",
+		label: "Figma",
+		path: "M9 3.5h4a3.5 3.5 0 1 1 0 7h-4v-7Zm0 7h4a3.5 3.5 0 1 1 0 7H9v-7Zm0 7h4a3.5 3.5 0 1 1 0 7H9v-7Z",
+	},
+	launch: {
+		kind: "svg",
+		label: "Launch",
+		path: "M9 14 20 3l-3 11-4 1-1 4-3-5ZM6 13 3 20l7-3",
+	},
+	default: {
+		kind: "svg",
+		label: "Project",
+		path: "M4 8.5 12 4l8 4.5-8 4.5-8-4.5Zm0 4 8 4.5 8-4.5M4 16.5l8 4.5 8-4.5",
+	},
+};
+
+const featuredProjects = workProjects.map((project) => ({
+	...project,
+	platformIcon: platformIcons[project.icon] ?? platformIcons.default,
+}));
 ---
 
 <Layout
@@ -58,7 +116,7 @@ import { workProjects } from "../lib/work";
 					"
 				>
 					{
-						workProjects.map((project) => (
+						featuredProjects.map((project) => (
 							<article
 								class="
 									group
@@ -129,28 +187,6 @@ import { workProjects } from "../lib/work";
 											/>
 
 											<!-- Category -->
-											<div
-												class="
-													absolute
-													left-4
-													top-4
-													inline-flex
-													rounded-full
-													border
-													border-cyan-300/70
-													bg-[#04101bf2]
-													px-3
-													py-1.5
-													text-[0.70rem]
-													font-bold
-													uppercase
-													tracking-[0.18em]
-													text-cyan-300
-													shadow-[0_10px_30px_rgba(0,0,0,0.22)]
-												"
-											>
-												{project.category}
-											</div>
 										</div>
 									</div>
 
@@ -395,39 +431,75 @@ import { workProjects } from "../lib/work";
 
 										<!-- BUTTON -->
 										<div class="mt-auto pt-6">
-											<a
-												href="/contact"
-												class="
-													inline-flex
-													items-center
-													gap-2
-													rounded-full
-													border
-													border-cyan-300/55
-													px-4
-													py-2.5
-													text-sm
-													font-bold
-													text-cyan-300
-													transition-all
-													duration-300
+											<div class="inline-flex items-center gap-3">
+												<a
+													href="/contact"
+													class="
+														inline-flex
+														items-center
+														rounded-full
+														border
+														border-cyan-300/55
+														px-4
+														py-2.5
+														text-sm
+														font-bold
+														text-cyan-300
+														transition-all
+														duration-300
 
-													hover:border-cyan-300
-													hover:bg-cyan-300
-													hover:text-[#06101f]
-												"
-											>
-												<span>
-													View Case Study
-												</span>
+														hover:border-cyan-300
+														hover:bg-cyan-300
+														hover:text-[#06101f]
+													"
+												>
+													<span>
+														View Case Study
+													</span>
+												</a>
 
 												<span
-													aria-hidden="true"
-													class="text-[1rem] leading-none"
+													class="
+														flex
+														h-9
+														w-9
+														shrink-0
+														items-center
+														justify-center
+														rounded-full
+														border
+														border-cyan-300/55
+														bg-[#04101bf2]
+														text-cyan-300
+														shadow-[0_10px_30px_rgba(0,0,0,0.22)]
+														transition-colors
+														duration-300
+
+														group-hover:bg-cyan-300/10
+													"
 												>
-													&rarr;
+													{project.platformIcon.kind === "image" ? (
+														<img
+															src={project.platformIcon.src}
+															alt={project.platformIcon.label}
+															class="h-4 w-4 object-contain"
+															loading="lazy"
+														/>
+													) : (
+														<svg
+															aria-hidden="true"
+															viewBox="0 0 24 24"
+															class="h-4 w-4 fill-none stroke-current stroke-[1.9]"
+														>
+															<path
+																d={project.platformIcon.path}
+																stroke-linecap="round"
+																stroke-linejoin="round"
+															></path>
+														</svg>
+													)}
 												</span>
-											</a>
+											</div>
 										</div>
 									</div>
 								</div>

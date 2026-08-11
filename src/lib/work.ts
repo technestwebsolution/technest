@@ -30,7 +30,7 @@ export const workProjects: WorkProject[] = [
       "Dwarkas Jewellery is a premium Shopify-based jewellery eCommerce platform designed to deliver a luxurious online shopping experience. The website combines elegant visuals, intuitive navigation, responsive design, and secure shopping to help customers explore and purchase fine jewellery with ease.",
     image: "/img/dwarkas.png",
     alt: "Stealth Belt portfolio preview",
-    icon: "laravel",
+    icon: "shopify",
     features: [
       "Premium Jewellery eCommerce Store",
       "Mobile-First Responsive Design",
@@ -86,7 +86,7 @@ export const workProjects: WorkProject[] = [
       "Mahaarajaa is a premium Shopify eCommerce website for high-quality dry fruits and healthy snacks. It delivers a fast, responsive, and SEO-friendly shopping experience with a clean, modern design.",
     image: "/img/mahaarajja.png",
     alt: "Mellow Cart portfolio preview",
-    icon: "cart",
+    icon: "shopify",
     features: [
       "Shopify Development",
       "Responsive Design",

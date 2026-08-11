@@ -1,195 +1,603 @@
 ---
 const technologies = [
-  { label: "React", image: "/img/react-svgrepo-com.svg", orbit: "outer", angle: "280deg" },
-  { label: "Vue", image: "/img/vue-svgrepo-com.svg", orbit: "outer", angle: "330deg" },
-  { label: "WooCommerce", image: "/img/woocommerce-icon-svgrepo-com.svg", orbit: "outer", angle: "25deg" },
-  { label: "Shopify", image: "/img/shopify-color-svgrepo-com.svg", orbit: "outer", angle: "75deg" },
-  { label: "Web Dev", image: "/img/web-development-svgrepo-com.svg", orbit: "outer", angle: "145deg" },
-  { label: "BigCommerce", image: "/img/bigcommerce.svg", orbit: "outer", angle: "205deg" },
+	// =========================================
+	// OUTER ORBIT
+	// 5 icons = 72deg equal gap
+	// =========================================
+	{
+		label: "React",
+		image: "/img/react-svgrepo-com.svg",
+		orbit: "outer",
+		angle: "270deg",
+	},
+	{
+		label: "Vue",
+		image: "/img/vue-svgrepo-com.svg",
+		orbit: "outer",
+		angle: "342deg",
+	},
+	{
+		label: "WooCommerce",
+		image: "/img/woocommerce-icon-svgrepo-com.svg",
+		orbit: "outer",
+		angle: "54deg",
+	},
+	{
+		label: "Shopify",
+		image: "/img/shopify-color-svgrepo-com.svg",
+		orbit: "outer",
+		angle: "126deg",
+	},
+	{
+		label: "BigCommerce",
+		image: "/img/bigcommerce.svg",
+		orbit: "outer",
+		angle: "198deg",
+	},
 
-  { label: "WordPress", image: "/img/wordpress-svgrepo-com.svg", orbit: "middle", angle: "18deg" },
-  { label: "SaaS", image: "/img/saas-icon.svg", orbit: "middle", angle: "112deg" },
-  { label: "BigCommerce Pro", image: "/img/bigcommerce_logo.jpeg", orbit: "middle", angle: "214deg" },
-  { label: "SaaS Alt", image: "/img/saas-icon-1.svg", orbit: "middle", angle: "304deg" },
+	// =========================================
+	// MIDDLE ORBIT
+	// Exact opposite
+	// =========================================
+	{
+		label: "WordPress",
+		image: "/img/wordpress-svgrepo-com.svg",
+		orbit: "middle",
+		angle: "300deg",
+	},
+	{
+		label: "SaaS",
+		image: "/img/saas-icon.svg",
+		orbit: "middle",
+		angle: "120deg",
+	},
 
-  { label: "Laravel", image: "/img/laravel-svgrepo-com-1.svg", orbit: "inner", angle: "135deg" },
-  { label: "Magento", image: "/img/magento-2-logo-svgrepo-com.svg", orbit: "inner", angle: "245deg" },
-  { label: "BigCommerce Badge", image: "/img/bigcommerce_logo-150x150.jpeg", orbit: "inner", angle: "345deg" },
+	// =========================================
+	// INNER ORBIT
+	// Exact opposite
+	// =========================================
+	{
+		label: "Laravel",
+		image: "/img/laravel-svgrepo-com-1.svg",
+		orbit: "inner",
+		angle: "330deg",
+	},
+	{
+		label: "Magento",
+		image: "/img/magento-2-logo-svgrepo-com.svg",
+		orbit: "inner",
+		angle: "150deg",
+	},
 ];
 
 const orbitSettings = {
-  outer: {
-    size: "92%",
-    duration: "32s",
-    direction: "normal",
-    ring: "border-cyan-300/85",
-  },
-  middle: {
-    size: "68%",
-    duration: "26s",
-    direction: "reverse",
-    ring: "border-white/35 border-dashed",
-  },
-  inner: {
-    size: "44%",
-    duration: "20s",
-    direction: "normal",
-    ring: "border-cyan-300/75",
-  },
-};
+	outer: {
+		size: "92%",
+		duration: "32s",
+		direction: "normal",
+		ring: "border-cyan-300/85",
+	},
 
+	middle: {
+		size: "68%",
+		duration: "26s",
+		direction: "reverse",
+		ring: "border-white/35 border-dashed",
+	},
+
+	inner: {
+		size: "44%",
+		duration: "20s",
+		direction: "normal",
+		ring: "border-cyan-300/75",
+	},
+};
 ---
 
-<section class="relative isolate overflow-hidden px-5 py-16 text-white lg:py-24">
-  <div class="pointer-events-none absolute inset-0"></div>
+<section
+	class="
+		relative
+		isolate
+		overflow-hidden
+		px-5
+		py-16
+		text-white
+		lg:py-24
+	"
+>
+	<div class="pointer-events-none absolute inset-0"></div>
 
-  <div class="relative mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
-    <div class="mx-auto flex w-full max-w-[720px] items-center justify-center">
-      <div class="relative aspect-square w-full max-w-[680px]">
+	<div
+		class="
+			relative
+			mx-auto
+			grid
+			max-w-7xl
+			items-center
+			gap-14
+			lg:grid-cols-2
+		"
+	>
+		<!-- =========================================
+		     ORBIT SIDE
+		========================================= -->
+		<div
+			class="
+				mx-auto
+				flex
+				w-full
+				max-w-[720px]
+				items-center
+				justify-center
+			"
+		>
+			<div
+				class="
+					relative
+					aspect-square
+					w-full
+					max-w-[680px]
+				"
+			>
+				<!-- =========================================
+				     BACKGROUND DOTTED RINGS
+				========================================= -->
 
-        <!-- Background dotted rings -->
-        <div class="absolute left-1/2 top-1/2 h-[92%] w-[92%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-dotted border-white/20"></div>
-        <div class="absolute left-1/2 top-1/2 h-[68%] w-[68%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-dotted border-white/18"></div>
-        <div class="absolute left-1/2 top-1/2 h-[44%] w-[44%] -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-dotted border-white/14"></div>
+				<div
+					class="
+						absolute
+						left-1/2
+						top-1/2
+						h-[92%]
+						w-[92%]
+						-translate-x-1/2
+						-translate-y-1/2
+						rounded-full
+						border-[4px]
+						border-dotted
+						border-white/20
+					"
+				>
+				</div>
 
-        <!-- Orbit layers -->
-        {Object.entries(orbitSettings).map(([orbitName, setting]) => (
-          <div
-            class={`orbit-layer absolute left-1/2 top-1/2 z-10 rounded-full ${
-              setting.direction === "reverse" ? "orbit-layer--reverse" : ""
-            }`}
-            style={`width:${setting.size}; height:${setting.size}; --duration:${setting.duration};`}
-          >
-            <!-- Moving border -->
-            <div class={`absolute inset-0 rounded-full border-[4px] ${setting.ring} shadow-[0_0_24px_rgba(39,244,239,0.22)]`}></div>
+				<div
+					class="
+						absolute
+						left-1/2
+						top-1/2
+						h-[68%]
+						w-[68%]
+						-translate-x-1/2
+						-translate-y-1/2
+						rounded-full
+						border-[4px]
+						border-dotted
+						border-white/18
+					"
+				>
+				</div>
 
-            <!-- Glow dots on border -->
-            <span class="absolute left-[17%] top-[5%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_24px_rgba(39,244,239,0.95)]"></span>
-            <span class="absolute bottom-[3%] right-[28%] h-4 w-4 rounded-full bg-cyan-300 shadow-[0_0_24px_rgba(39,244,239,0.95)]"></span>
+				<div
+					class="
+						absolute
+						left-1/2
+						top-1/2
+						h-[44%]
+						w-[44%]
+						-translate-x-1/2
+						-translate-y-1/2
+						rounded-full
+						border-[4px]
+						border-dotted
+						border-white/14
+					"
+				>
+				</div>
 
-            <!-- Icons fixed on same border -->
-            {technologies
-              .filter((item) => item.orbit === orbitName)
-              .map((item) => (
-                <div
-                  class="orbit-marker absolute inset-0"
-                  style={`--angle:${item.angle}; --duration:${setting.duration};`}
-                >
-                  <div class="orbit-card absolute left-1/2 top-0 z-30 flex h-[58px] w-[58px] items-center justify-center rounded-full bg-white shadow-[0_16px_38px_rgba(0,0,0,0.38)] ring-1 ring-white/70 sm:h-[70px] sm:w-[70px] lg:h-[78px] lg:w-[78px]">
-                    <div class={`orbit-card-inner flex h-full w-full items-center justify-center ${setting.direction === "reverse" ? "orbit-card-inner--reverse" : ""}`}>
-                      <img
-                        src={item.image}
-                        alt={item.label}
-                        loading="lazy"
-                        class="h-9 w-9 object-contain sm:h-10 sm:w-10"
-                      />
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
-        ))}
+				<!-- =========================================
+				     ORBIT LAYERS
+				========================================= -->
 
-        <!-- Center logo -->
-        <div class="absolute left-1/2 top-1/2 z-20 flex h-[27%] w-[27%] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#06101f]/85 shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_0_90px_rgba(39,244,239,0.25)]">
-          <div class="absolute inset-[-42%] rounded-full bg-[radial-gradient(circle,rgba(39,244,239,0.28),transparent_68%)] blur-2xl"></div>
-          <img
-            src="/img/logo_tech.svg"
-            alt="Technest logo"
-            class="relative z-10 h-[82%] w-[82%] object-contain"
-          />
-        </div>
-      </div>
-    </div>
+				{
+					Object.entries(orbitSettings).map(
+						([orbitName, setting]) => (
+							<div
+								class={`orbit-layer absolute left-1/2 top-1/2 z-10 rounded-full ${
+									setting.direction === "reverse"
+										? "orbit-layer--reverse"
+										: ""
+								}`}
+								style={`
+									width: ${setting.size};
+									height: ${setting.size};
+									--duration: ${setting.duration};
+								`}
+							>
+								<!-- ==========================
+								     MOVING BORDER
+								========================== -->
 
-    <div>
-      <div class="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-cyan-300">
-        <span class="h-px w-5 bg-cyan-300"></span>
-        <span>Our Expertise</span>
-        <span class="h-px w-5 bg-cyan-300"></span>
-      </div>
+								<div
+									class={`
+										absolute
+										inset-0
+										rounded-full
+										border-[4px]
+										${setting.ring}
+										shadow-[0_0_24px_rgba(39,244,239,0.22)]
+									`}
+								>
+								</div>
 
-      <h2 class="font-lexend text-[32px] font-extrabold leading-tight text-white sm:text-[44px] lg:text-[54px]">
-        Trust Technest to Transform Your Vision
-      </h2>
+								<!-- ==========================
+								     GLOW DOT 1
+								========================== -->
 
-      <p class="mt-5 max-w-2xl font-montserrat text-[17px] leading-8 text-white/80 sm:text-[19px]">
-        Choosing the right partner matters. Technest combines deep expertise in AI, cloud,
-        and modern web development to build software that is fast, scalable, and ready to grow.
-      </p>
+								<span
+									class="
+										absolute
+										left-[17%]
+										top-[5%]
+										h-4
+										w-4
+										rounded-full
+										bg-cyan-300
+										shadow-[0_0_24px_rgba(39,244,239,0.95)]
+									"
+								>
+								</span>
 
-      <a
-        href="#contact"
-        class="mt-8 inline-flex min-h-[52px] items-center justify-center rounded-full bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)] px-8 font-montserrat text-base font-bold text-[#00111b] transition hover:-translate-y-1 hover:brightness-110"
-      >
-        Contact Our Experts
-      </a>
-    </div>
-  </div>
+								<!-- ==========================
+								     GLOW DOT 2
+								========================== -->
+
+								<span
+									class="
+										absolute
+										bottom-[3%]
+										right-[28%]
+										h-4
+										w-4
+										rounded-full
+										bg-cyan-300
+										shadow-[0_0_24px_rgba(39,244,239,0.95)]
+									"
+								>
+								</span>
+
+								<!-- ==========================
+								     TECHNOLOGY ICONS
+								========================== -->
+
+								{technologies
+									.filter(
+										(item) =>
+											item.orbit === orbitName,
+									)
+									.map((item) => (
+										<div
+											class="orbit-marker absolute inset-0"
+											style={`
+												--angle: ${item.angle};
+												--counter-angle: ${-parseFloat(
+													item.angle,
+												)}deg;
+												--duration: ${setting.duration};
+											`}
+										>
+											<div
+												class="
+													orbit-card
+													absolute
+													left-1/2
+													top-0
+													z-30
+													flex
+													h-[58px]
+													w-[58px]
+													items-center
+													justify-center
+													rounded-full
+													bg-white
+													shadow-[0_16px_38px_rgba(0,0,0,0.38)]
+													ring-1
+													ring-white/70
+													lg:h-[70px]
+													lg:w-[70px]
+												"
+											>
+												<!--
+													This wrapper keeps
+													the logo straight.
+												-->
+												<div
+													class={`orbit-card-inner flex h-full w-full items-center justify-center ${
+														setting.direction ===
+														"reverse"
+															? "orbit-card-inner--reverse"
+															: ""
+													}`}
+												>
+													<img
+														src={item.image}
+														alt={
+															item.label
+														}
+														loading="lazy"
+														class="
+															h-9
+															w-9
+															object-contain
+															lg:h-9
+															lg:w-9
+														"
+													/>
+												</div>
+											</div>
+										</div>
+									))}
+							</div>
+						),
+					)
+				}
+
+				<!-- =========================================
+				     CENTER LOGO
+				========================================= -->
+
+				<div
+					class="
+						absolute
+						left-1/2
+						top-1/2
+						z-20
+						flex
+						h-[27%]
+						w-[27%]
+						-translate-x-1/2
+						-translate-y-1/2
+						items-center
+						justify-center
+						rounded-full
+						bg-[#06101f]/85
+						shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_0_90px_rgba(39,244,239,0.25)]
+					"
+				>
+					<div
+						class="
+							absolute
+							inset-[-42%]
+							rounded-full
+							bg-[radial-gradient(circle,rgba(39,244,239,0.28),transparent_68%)]
+							blur-2xl
+						"
+					>
+					</div>
+
+					<img
+						src="/img/logo_tech.svg"
+						alt="Technest logo"
+						class="
+							relative
+							z-10
+							h-[82%]
+							w-[82%]
+							object-contain
+						"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<!-- =========================================
+		     CONTENT SIDE
+		========================================= -->
+
+		<div>
+			<div
+				class="
+					mb-5
+					flex
+					items-center
+					gap-3
+					text-xs
+					font-bold
+					uppercase
+					tracking-[0.18em]
+					text-cyan-300
+				"
+			>
+				<span class="h-px w-5 bg-cyan-300"></span>
+
+				<span>
+					Our Expertise
+				</span>
+
+				<span class="h-px w-5 bg-cyan-300"></span>
+			</div>
+
+			<h2
+				class="
+					font-lexend
+					text-[32px]
+					font-extrabold
+					leading-tight
+					text-white
+					sm:text-[44px]
+					lg:text-[54px]
+				"
+			>
+				Trust Technest to Transform Your Vision
+			</h2>
+
+			<p
+				class="
+					mt-5
+					max-w-2xl
+					font-montserrat
+					text-[17px]
+					leading-8
+					text-white/80
+					sm:text-[19px]
+				"
+			>
+				Choosing the right partner matters. Technest combines deep
+				expertise in AI, cloud, and modern web development to build
+				software that is fast, scalable, and ready to grow.
+			</p>
+
+			<a
+				href="#contact"
+				class="
+					mt-8
+					inline-flex
+					min-h-[52px]
+					items-center
+					justify-center
+					rounded-full
+					bg-[linear-gradient(135deg,#27f4ef_0%,#10c0ff_100%)]
+					px-8
+					font-montserrat
+					text-base
+					font-bold
+					text-[#00111b]
+					transition
+					duration-300
+					hover:-translate-y-1
+					hover:brightness-110
+				"
+			>
+				Contact Our Experts
+			</a>
+		</div>
+	</div>
 </section>
 
 <style>
-  .orbit-layer {
-    transform: translate(-50%, -50%) rotate(0deg);
-    transform-origin: center;
-    animation: orbitRotate var(--duration) linear infinite;
-  }
+	/* =========================================
+	   ORBIT ROTATION
+	========================================= */
 
-  .orbit-layer--reverse {
-    animation-direction: reverse;
-  }
+	.orbit-layer {
+		transform: translate(-50%, -50%) rotate(0deg);
+		transform-origin: center;
+		animation: orbitRotate var(--duration) linear infinite;
+	}
 
-  .orbit-marker {
-    transform: rotate(var(--angle));
-    transform-origin: center;
-  }
+	.orbit-layer--reverse {
+		animation-direction: reverse;
+	}
 
-  .orbit-card {
-    transform: translate(-50%, -50%);
-  }
+	/* =========================================
+	   ICON POSITION ON RING
+	========================================= */
 
-  .orbit-card-inner {
-    animation: keepStraight var(--duration) linear infinite;
-  }
+	.orbit-marker {
+		transform: rotate(var(--angle));
+		transform-origin: center;
+	}
 
-  .orbit-card-inner--reverse {
-    animation-name: keepStraightReverse;
-  }
+	.orbit-card {
+		transform: translate(-50%, -50%);
+	}
 
-  @keyframes orbitRotate {
-    from {
-      transform: translate(-50%, -50%) rotate(0deg);
-    }
+	/* =========================================
+	   KEEP LOGO STRAIGHT
 
-    to {
-      transform: translate(-50%, -50%) rotate(360deg);
-    }
-  }
+	   Important:
+	   Orbit marker has its own static angle.
+	   So we need to cancel:
+	   1. marker angle
+	   2. orbit rotation
+	========================================= */
 
-  @keyframes keepStraight {
-    from {
-      transform: rotate(0deg);
-    }
+	.orbit-card-inner {
+		transform: rotate(var(--counter-angle));
 
-    to {
-      transform: rotate(-360deg);
-    }
-  }
+		animation:
+			keepStraight var(--duration)
+			linear infinite;
 
-  @keyframes keepStraightReverse {
-    from {
-      transform: rotate(0deg);
-    }
+		transform-origin: center;
+	}
 
-    to {
-      transform: rotate(360deg);
-    }
-  }
+	.orbit-card-inner--reverse {
+		animation-name: keepStraightReverse;
+	}
 
-  @media (max-width: 640px) {
-    .orbit-card {
-      height: 52px;
-      width: 52px;
-    }
-  }
+	/* =========================================
+	   NORMAL ORBIT
+	========================================= */
+
+	@keyframes orbitRotate {
+		from {
+			transform:
+				translate(-50%, -50%)
+				rotate(0deg);
+		}
+
+		to {
+			transform:
+				translate(-50%, -50%)
+				rotate(360deg);
+		}
+	}
+
+	/* =========================================
+	   NORMAL DIRECTION:
+	   Cancel marker angle + rotating orbit
+	========================================= */
+
+	@keyframes keepStraight {
+		from {
+			transform:
+				rotate(var(--counter-angle));
+		}
+
+		to {
+			transform:
+				rotate(
+					calc(
+						var(--counter-angle) - 360deg
+					)
+				);
+		}
+	}
+
+	/* =========================================
+	   REVERSE DIRECTION:
+	   Cancel marker angle + reverse orbit
+	========================================= */
+
+	/* @keyframes keepStraightReverse {
+		from {
+			transform:
+				rotate(var(--counter-angle));
+		}
+
+		to {
+			transform:
+				rotate(
+					calc(
+						var(--counter-angle) + 360deg
+					)
+				);
+		}
+	} */
+
+	/* =========================================
+	   MOBILE
+	========================================= */
+
+	@media (max-width: 640px) {
+		.orbit-card {
+			height: 52px;
+			width: 52px;
+		}
+
+		.orbit-card img {
+			height: 30px;
+			width: 30px;
+		}
+	}
 </style>
