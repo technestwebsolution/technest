@@ -2,7 +2,6 @@
 const technologies = [
 	// =========================================
 	// OUTER ORBIT
-	// 5 icons = 72deg equal gap
 	// =========================================
 	{
 		label: "React",
@@ -37,7 +36,6 @@ const technologies = [
 
 	// =========================================
 	// MIDDLE ORBIT
-	// Exact opposite
 	// =========================================
 	{
 		label: "WordPress",
@@ -54,7 +52,6 @@ const technologies = [
 
 	// =========================================
 	// INNER ORBIT
-	// Exact opposite
 	// =========================================
 	{
 		label: "Laravel",
@@ -70,12 +67,23 @@ const technologies = [
 	},
 ];
 
+/*
+	IMPORTANT:
+	Dots now use ANGLES instead of top / left / bottom / right.
+
+	Because of this, every dot remains exactly on the orbit line.
+*/
 const orbitSettings = {
 	outer: {
 		size: "92%",
 		duration: "32s",
 		direction: "normal",
 		ring: "border-cyan-300/85",
+
+		dots: [
+			{ angle: "12deg" },
+			{ angle: "182deg" },
+		],
 	},
 
 	middle: {
@@ -83,6 +91,11 @@ const orbitSettings = {
 		duration: "26s",
 		direction: "reverse",
 		ring: "border-white/35 border-dashed",
+
+		dots: [
+			{ angle: "0deg" },
+			{ angle: "168deg" },
+		],
 	},
 
 	inner: {
@@ -90,6 +103,11 @@ const orbitSettings = {
 		duration: "20s",
 		direction: "normal",
 		ring: "border-cyan-300/75",
+
+		dots: [
+			{ angle: "60deg" },
+			{ angle: "240deg" },
+		],
 	},
 };
 ---
@@ -121,6 +139,7 @@ const orbitSettings = {
 		<!-- =========================================
 		     ORBIT SIDE
 		========================================= -->
+
 		<div
 			class="
 				mx-auto
@@ -213,9 +232,9 @@ const orbitSettings = {
 									--duration: ${setting.duration};
 								`}
 							>
-								<!-- ==========================
-								     MOVING BORDER
-								========================== -->
+								<!-- =========================================
+								     ACTUAL ORBIT BORDER
+								========================================= -->
 
 								<div
 									class={`
@@ -229,113 +248,116 @@ const orbitSettings = {
 								>
 								</div>
 
-								<!-- ==========================
-								     GLOW DOT 1
-								========================== -->
+								<!-- =========================================
+								     GLOW DOTS
 
-								<span
-									class="
-										absolute
-										left-[17%]
-										top-[5%]
-										h-4
-										w-4
-										rounded-full
-										bg-cyan-300
-										shadow-[0_0_24px_rgba(39,244,239,0.95)]
-									"
-								>
-								</span>
+								     IMPORTANT:
+								     Dot wrapper rotates around center.
+								     Dot itself is exactly at top center.
 
-								<!-- ==========================
-								     GLOW DOT 2
-								========================== -->
+								     Therefore it ALWAYS stays exactly
+								     on the orbit circumference.
+								========================================= -->
 
-								<span
-									class="
-										absolute
-										bottom-[3%]
-										right-[28%]
-										h-4
-										w-4
-										rounded-full
-										bg-cyan-300
-										shadow-[0_0_24px_rgba(39,244,239,0.95)]
-									"
-								>
-								</span>
-
-								<!-- ==========================
-								     TECHNOLOGY ICONS
-								========================== -->
-
-								{technologies
-									.filter(
-										(item) =>
-											item.orbit === orbitName,
-									)
-									.map((item) => (
+								{
+									setting.dots.map((dot) => (
 										<div
-											class="orbit-marker absolute inset-0"
-											style={`
-												--angle: ${item.angle};
-												--counter-angle: ${-parseFloat(
-													item.angle,
-												)}deg;
-												--duration: ${setting.duration};
-											`}
+											class="orbit-dot-marker absolute inset-0"
+											style={`--dot-angle: ${dot.angle};`}
 										>
-											<div
+											<span
 												class="
-													orbit-card
+													orbit-dot
 													absolute
 													left-1/2
 													top-0
-													z-30
-													flex
-													h-[58px]
-													w-[58px]
-													items-center
-													justify-center
+													z-20
+													block
+													h-4
+													w-4
 													rounded-full
-													bg-white
-													shadow-[0_16px_38px_rgba(0,0,0,0.38)]
-													ring-1
-													ring-white/70
-													lg:h-[70px]
-													lg:w-[70px]
+													bg-cyan-300
+													shadow-[0_0_24px_rgba(39,244,239,0.95)]
 												"
 											>
-												<!--
-													This wrapper keeps
-													the logo straight.
-												-->
+											</span>
+										</div>
+									))
+								}
+
+								<!-- =========================================
+								     TECHNOLOGY ICONS
+								========================================= -->
+
+								{
+									technologies
+										.filter(
+											(item) =>
+												item.orbit ===
+												orbitName,
+										)
+										.map((item) => (
+											<div
+												class="orbit-marker absolute inset-0"
+												style={`
+													--angle: ${item.angle};
+													--counter-angle: ${-parseFloat(
+														item.angle,
+													)}deg;
+													--duration: ${setting.duration};
+												`}
+											>
 												<div
-													class={`orbit-card-inner flex h-full w-full items-center justify-center ${
-														setting.direction ===
-														"reverse"
-															? "orbit-card-inner--reverse"
-															: ""
-													}`}
+													class="
+														orbit-card
+														absolute
+														left-1/2
+														top-0
+														z-30
+														flex
+														h-[58px]
+														w-[58px]
+														items-center
+														justify-center
+														rounded-full
+														bg-white
+														shadow-[0_16px_38px_rgba(0,0,0,0.38)]
+														ring-1
+														ring-white/70
+														lg:h-[70px]
+														lg:w-[70px]
+													"
 												>
-													<img
-														src={item.image}
-														alt={
-															item.label
-														}
-														loading="lazy"
-														class="
-															h-9
-															w-9
-															object-contain
-															lg:h-9
-															lg:w-9
-														"
-													/>
+													<!-- Logo straight rakhe che -->
+													<div
+														class={`orbit-card-inner flex h-full w-full items-center justify-center ${
+															setting.direction ===
+															"reverse"
+																? "orbit-card-inner--reverse"
+																: ""
+														}`}
+													>
+														<img
+															src={
+																item.image
+															}
+															alt={
+																item.label
+															}
+															loading="lazy"
+															class="
+																h-9
+																w-9
+																object-contain
+																lg:h-9
+																lg:w-9
+															"
+														/>
+													</div>
 												</div>
 											</div>
-										</div>
-									))}
+										))
+								}
 							</div>
 						),
 					)
@@ -489,7 +511,7 @@ const orbitSettings = {
 	}
 
 	/* =========================================
-	   ICON POSITION ON RING
+	   ICON POSITION ON ORBIT
 	========================================= */
 
 	.orbit-marker {
@@ -502,23 +524,38 @@ const orbitSettings = {
 	}
 
 	/* =========================================
-	   KEEP LOGO STRAIGHT
+	   DOT POSITION ON ORBIT
 
-	   Important:
-	   Orbit marker has its own static angle.
-	   So we need to cancel:
-	   1. marker angle
-	   2. orbit rotation
+	   This is the main FIX.
+	========================================= */
+
+	.orbit-dot-marker {
+		transform: rotate(var(--dot-angle));
+		transform-origin: center;
+	}
+
+	.orbit-dot {
+		/*
+			top: 0 = orbit edge
+			left: 50% = horizontal center
+
+			Translate places the CENTER of dot
+			directly over the orbit border.
+		*/
+		transform: translate(-30%, -30%);
+	}
+
+	/* =========================================
+	   KEEP LOGO STRAIGHT
 	========================================= */
 
 	.orbit-card-inner {
 		transform: rotate(var(--counter-angle));
+		transform-origin: center;
 
 		animation:
 			keepStraight var(--duration)
 			linear infinite;
-
-		transform-origin: center;
 	}
 
 	.orbit-card-inner--reverse {
@@ -526,7 +563,7 @@ const orbitSettings = {
 	}
 
 	/* =========================================
-	   NORMAL ORBIT
+	   ORBIT ANIMATION
 	========================================= */
 
 	@keyframes orbitRotate {
@@ -544,8 +581,7 @@ const orbitSettings = {
 	}
 
 	/* =========================================
-	   NORMAL DIRECTION:
-	   Cancel marker angle + rotating orbit
+	   NORMAL ORBIT LOGO COUNTER ROTATION
 	========================================= */
 
 	@keyframes keepStraight {
@@ -565,11 +601,10 @@ const orbitSettings = {
 	}
 
 	/* =========================================
-	   REVERSE DIRECTION:
-	   Cancel marker angle + reverse orbit
+	   REVERSE ORBIT LOGO COUNTER ROTATION
 	========================================= */
 
-	/* @keyframes keepStraightReverse {
+	@keyframes keepStraightReverse {
 		from {
 			transform:
 				rotate(var(--counter-angle));
@@ -583,7 +618,7 @@ const orbitSettings = {
 					)
 				);
 		}
-	} */
+	}
 
 	/* =========================================
 	   MOBILE
@@ -598,6 +633,11 @@ const orbitSettings = {
 		.orbit-card img {
 			height: 30px;
 			width: 30px;
+		}
+
+		.orbit-dot {
+			height: 13px;
+			width: 13px;
 		}
 	}
 </style>
