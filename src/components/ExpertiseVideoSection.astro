@@ -14,40 +14,99 @@ const expertiseItems = [
   },
 ];
 
-const mediaSrc = "/img/about.webp";
+const mediaSrc =
+  "https://technestwebsolution.com/wp-content/uploads/2026/04/Richa-Reel.mp4";
 ---
 
 <section
   class="relative w-full overflow-hidden px-4 py-0 text-white lg:px-8 xl:py-20"
 >
-  <div class="mx-auto grid max-w-[1900px] lg:grid-cols-3 grid-cols-1 gap-8 lg:gap-16">
-    
+  <div
+    class="
+      mx-auto
+      grid
+      max-w-[1900px]
+      grid-cols-1
+      gap-8
+      lg:grid-cols-3
+      lg:gap-16
+    "
+  >
     <!-- Left Content -->
     <div class="pt-2">
-      <div class="mb-7 flex items-center gap-4 text-[16px] font-bold text-[#00f5e0]">
+      <div
+        class="
+          mb-7
+          flex
+          items-center
+          gap-4
+          text-[16px]
+          font-bold
+          text-[#00f5e0]
+        "
+      >
         <span class="h-5 w-px bg-white/80"></span>
+
         <span>Our Expertise</span>
+
         <span class="h-5 w-px bg-white/80"></span>
       </div>
 
-      <h2 class="font-bold leading-[1.10] text-white text-[25px] lg:text-[40px]">
+      <h2
+        class="
+          text-[25px]
+          font-bold
+          leading-[1.10]
+          text-white
+          lg:text-[40px]
+        "
+      >
         Building Solutions <br />
         That Work Across <br />
         Every Business.
       </h2>
 
-      <p class="mt-6 font-montserrat text-[17px] leading-6 text-white/88 lg:text-[16px]">
-        Since 2022, Technest has been helping startups and growing businesses launch powerful web applications, e-commerce stores, and SaaS products — delivered on time, every time.
+      <p
+        class="
+          mt-6
+          font-montserrat
+          text-[17px]
+          leading-6
+          text-white/88
+          lg:text-[16px]
+        "
+      >
+        Since 2022, Technest has been helping startups and growing businesses
+        launch powerful web applications, e-commerce stores, and SaaS products
+        — delivered on time, every time.
       </p>
     </div>
 
     <!-- Middle Content -->
     <div class="pt-4 xl:pt-8">
       <div class="mb-7">
-        <div class="text-[58px] font-extrabold leading-none tracking-[-2px] text-[#00f5e0] lg:text-[50px]">
+        <div
+          class="
+            text-[58px]
+            font-extrabold
+            leading-none
+            tracking-[-2px]
+            text-[#00f5e0]
+            lg:text-[50px]
+          "
+        >
           +6
         </div>
-        <p class="mt-2 text-[18px] font-bold tracking-[-0.4px] text-white lg:text-[18px]">
+
+        <p
+          class="
+            mt-2
+            text-[18px]
+            font-bold
+            tracking-[-0.4px]
+            text-white
+          "
+        >
           Specific of Industries
         </p>
       </div>
@@ -56,11 +115,29 @@ const mediaSrc = "/img/about.webp";
         {
           expertiseItems.map((item) => (
             <div>
-              <h3 class="mb-2 text-[22px] font-extrabold leading-tight tracking-[-0.6px] text-white lg:text-[20px]">
+              <h3
+                class="
+                  mb-2
+                  text-[22px]
+                  font-extrabold
+                  leading-tight
+                  tracking-[-0.6px]
+                  text-white
+                  lg:text-[20px]
+                "
+              >
                 {item.title}
               </h3>
 
-              <p class=" font-montserrat text-[17px] leading-6 text-white/88 lg:text-[14px]">
+              <p
+                class="
+                  font-montserrat
+                  text-[17px]
+                  leading-6
+                  text-white/88
+                  lg:text-[14px]
+                "
+              >
                 {item.text}
               </p>
             </div>
@@ -69,15 +146,43 @@ const mediaSrc = "/img/about.webp";
       </div>
     </div>
 
-    <!-- Right Media -->
+    <!-- Right Video -->
     <div class="lg:col-span-2 xl:col-span-1 xl:flex xl:justify-end">
-      <div class="relative w-full max-w-[610px] border-2 border-black">
-        <div class="relative h-[520px] w-full overflow-hidden bg-black sm:h-[620px] lg:h-[720px] xl:h-full">
-          <img
+      <div
+        class="
+          relative
+          w-full
+          max-w-[610px]
+          overflow-hidden
+          border-2
+          border-black
+        "
+      >
+        <div
+          class="
+            relative
+            h-[520px]
+            w-full
+            overflow-hidden
+            bg-black
+            sm:h-[620px]
+            lg:h-[720px]
+            xl:h-full
+          "
+        >
+          <video
             class="h-full w-full object-cover"
-            src={mediaSrc}
-            alt="Technest expertise showcase"
-          />
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-label="Technest expertise showcase"
+          >
+            <source src={mediaSrc} type="video/mp4" />
+
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
