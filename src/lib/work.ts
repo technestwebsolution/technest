@@ -38,13 +38,13 @@ export const workProjects: WorkProject[] = [
     ],
   },
   {
-    category: "SaaS",
+    category: "laravel",
     title: "Maaplo",
     description:
       "Maaplo is a cloud-based SaaS platform that helps tailoring businesses digitize customer measurements, manage records, and streamline daily operations with ease.",
     image: "/img/maaplo.png",
     alt: "Patrol Pilot portfolio preview",
-    icon: "saas",
+    icon: "laravel",
     features: [
       "Digital Measurement Management",
       "Customer Record Management",
@@ -101,7 +101,7 @@ export const workProjects: WorkProject[] = [
       "Helox Power is a modern business website for the energy sector, built with Laravel and Vue.js. It features a responsive design, fast performance, and an SEO-friendly architecture.",
     image: "/img/helox.png",
     alt: "Atlas Studio portfolio preview",
-    icon: "figma",
+    icon: "laravel",
     features: [
       "Energy Solutions",
       "Service Management",
@@ -115,7 +115,7 @@ export const workProjects: WorkProject[] = [
       "VR5 Luxury is a premium resort website with a modern, responsive design. It showcases luxury accommodations and amenities while delivering a fast and seamless user experience.",
     image: "/img/vr5.png",
     alt: "Velocity Launch portfolio preview",
-    icon: "launch",
+    icon: "code",
     features: [
       "Luxury Resort Showcase",
       "Responsive Design",

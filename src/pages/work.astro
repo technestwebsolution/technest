@@ -664,17 +664,17 @@ const featuredProjects = workProjects.map((project) => ({
 						grid
 						items-center
 						lg:gap-8
-            gap-4
+           				gap-4
 						overflow-hidden
 						rounded-[2rem]
 						border
 						border-cyan-300/20
 						bg-[linear-gradient(180deg,#07111f_0%,#050b16_100%)]
 						px-5
-						py-6
+						py-10
 						shadow-[0_28px_100px_rgba(0,0,0,0.4)]
 						lg:grid-cols-[0.95fr_1.05fr]
-						lg:px-8
+						lg:px-10
 					"
 				>
 					<!-- LEFT -->
@@ -691,7 +691,7 @@ const featuredProjects = workProjects.map((project) => ({
 								max-w-xl
 								font-lexend
 								lg:text-[28px]
-                text-[18px]
+                                text-[18px]
 								font-extrabold
 								lg:leading-[1.05]
 								text-white
@@ -720,7 +720,7 @@ const featuredProjects = workProjects.map((project) => ({
 							href="/contact#contact"
 							class="
 								lg:mt-7
-                mt-3
+                				mt-3
 								inline-flex
 								items-center
 								gap-2
@@ -744,7 +744,13 @@ const featuredProjects = workProjects.map((project) => ({
 							</span>
 						</a>
 
-						<div
+					
+					</div>
+
+					<!-- RIGHT IMAGE -->
+					<div class="order-1 lg:order-2">
+						
+							<div
 							class="
 								mt-8
 								grid
@@ -767,7 +773,7 @@ const featuredProjects = workProjects.map((project) => ({
 								<div
 									class="text-2xl font-black text-cyan-300"
 								>
-									50+
+									15+
 								</div>
 
 								<div
@@ -815,7 +821,7 @@ const featuredProjects = workProjects.map((project) => ({
 								<div
 									class="text-2xl font-black text-cyan-300"
 								>
-									30+
+									10+
 								</div>
 
 								<div
@@ -849,13 +855,7 @@ const featuredProjects = workProjects.map((project) => ({
 								</div>
 							</div>
 						</div>
-					</div>
-
-					<!-- RIGHT IMAGE -->
-					<div class="order-1 lg:order-2">
-						
-						
-							<img
+							<!-- <img
 								src="/img/work.webp"
 								alt="Our Work"
 								class="
@@ -866,7 +866,7 @@ const featuredProjects = workProjects.map((project) => ({
 									object-contain
 									object-center
 								"
-							/>
+							/> -->
 
 						
 						</div>
