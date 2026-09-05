@@ -38,6 +38,20 @@ export const workProjects: WorkProject[] = [
     ],
   },
   {
+    category: "SaaS",
+    title: "Maaplo",
+    description:
+      "Maaplo is a cloud-based SaaS platform that helps tailoring businesses digitize customer measurements, manage records, and streamline daily operations with ease.",
+    image: "/img/maaplo.png",
+    alt: "Patrol Pilot portfolio preview",
+    icon: "saas",
+    features: [
+      "Digital Measurement Management",
+      "Customer Record Management",
+      "Cloud-Based & Secure Platform",
+    ],
+  },
+  {
     category: "Astro + WordPress",
     title: "SAI Finance",
     description:
@@ -51,20 +65,7 @@ export const workProjects: WorkProject[] = [
       "User-Friendly Design",
     ],
   },
-  {
-    category: "SaaS",
-    title: "Maaplo",
-    description:
-      "Maaplo is a cloud-based SaaS platform that helps tailoring businesses digitize customer measurements, manage records, and streamline daily operations with ease.",
-    image: "/img/about.jpg",
-    alt: "Patrol Pilot portfolio preview",
-    icon: "saas",
-    features: [
-      "Digital Measurement Management",
-      "Customer Record Management",
-      "Cloud-Based & Secure Platform",
-    ],
-  },
+  
   {
     category: "E-Commerce",
     title: "Design Mohalla",

@@ -17,14 +17,14 @@ import Layout from "../layouts/Layout.astro";
 	<HeaderHome />
 	<!-- section 1 -->
 	<section
-		class="relative isolate min-h-[70vh] overflow-hidden bg-transparent px-5"
+		class="relative isolate min-h-[85vh] overflow-hidden bg-transparent px-5"
 		style="background-color: transparent; --background-overlay: ''; background-image: linear-gradient(80deg, #021129 0%, #040C1966 65%);"
 	>
-		<img
+		<!-- <img
 			src="/img/background_img.jpg"
 			alt="Hero Background"
 			class="absolute inset-0 z-10 h-full w-full object-cover object-center opacity-20"
-		/>
+		/> -->
 		<div
 			aria-hidden="true"
 			class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.09),transparent_28%),linear-gradient(180deg,#07111f_0%,#06101b_100%)]"
@@ -34,7 +34,7 @@ import Layout from "../layouts/Layout.astro";
 		<div
 			class="flex md:flex-row flex-col mx-auto max-w-7xl lg:gap-20 gap-10 px-5"
 		>
-			<div class="lg:mt-20 mt-5">
+			<div class="lg:mt-30 mt-5">
 				<h1
 					class="relative z-10 text-[40px] font-bold lg:leading-20 text-white lg:text-[80px] font-lexend"
 				>
@@ -56,7 +56,7 @@ import Layout from "../layouts/Layout.astro";
 					<span>Let's Innovate</span>
 				</a>
 			</div>
-			<div>
+			<div class="lg:mt-10 mt-0">
 				<img
 					src="/img/logo_tech.svg"
 					alt="Hero Image"
@@ -67,9 +67,11 @@ import Layout from "../layouts/Layout.astro";
 	</section>
 
 	<Services />
-	<Process />
-	<About />
 	<Expertise />
+	<Process />
+	
+	<!-- <About /> -->
+
 	<Testimonials />
 	<Work />
 	<Blog />
