@@ -22,7 +22,13 @@
           Send Us a Message
         </h2>
 
-        <form class="mt-11 grid gap-8" action="#" method="post">
+        <form
+          class="mt-11 grid gap-8"
+          action="mailto:hello@technestwebsolution.com"
+          method="post"
+          enctype="text/plain"
+          data-contact-form
+        >
           <div class="grid gap-7">
             <div class="grid gap-2">
               <input
@@ -31,6 +37,7 @@
                 type="text"
                 autocomplete="name"
                 placeholder="Name"
+                required
                 class="w-full border-0 border-b border-white/28 bg-transparent pb-3 font-montserrat text-[0.98rem] text-white outline-none transition-colors duration-150 placeholder:text-white/50 focus:border-cyan-300 focus:ring-0"
               />
             </div>
@@ -42,6 +49,7 @@
                 type="email"
                 autocomplete="email"
                 placeholder="Email"
+                required
                 class="w-full border-0 border-b border-white/28 bg-transparent pb-3 font-montserrat text-[0.98rem] text-white outline-none transition-colors duration-150 placeholder:text-white/50 focus:border-cyan-300 focus:ring-0"
               />
             </div>
@@ -63,6 +71,7 @@
                 name="message"
                 rows="8"
                 placeholder="How can we help you? Feel free to get in touch."
+                required
                 class="mt-4 h-[150px] w-full resize-none border-0 border-b border-white/28 bg-transparent pb-3 font-montserrat text-[0.98rem] text-white outline-none transition-colors duration-150 placeholder:text-white/50 focus:border-cyan-300 focus:ring-0"
               ></textarea>
             </div>
@@ -73,6 +82,7 @@
               id="contact-consent"
               name="consent"
               type="checkbox"
+              required
               class="mt-1 h-4 w-4 rounded border-white/35 bg-transparent text-cyan-300 focus:ring-cyan-300"
             />
             <label for="contact-consent" class="font-montserrat text-[0.92rem] leading-6 text-white/88">
@@ -130,7 +140,7 @@
 
           <div class="mt-6">
             <a
-              href="https://www.linkedin.com/"
+              href="https://in.linkedin.com/in/richa-shah-b98380182"
               target="_blank"
               rel="noreferrer"
               aria-label="Visit our LinkedIn profile"
@@ -145,3 +155,28 @@
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.querySelectorAll("[data-contact-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const data = new FormData(form);
+      const subject = `New project enquiry from ${data.get("name")}`;
+      const body = [
+        `Name: ${data.get("name")}`,
+        `Email: ${data.get("email")}`,
+        `Phone: ${data.get("phone") || "Not provided"}`,
+        "",
+        `Message:\n${data.get("message")}`,
+      ].join("\n");
+
+      window.location.href = `mailto:hello@technestwebsolution.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  });
+</script>

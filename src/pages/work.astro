@@ -131,7 +131,6 @@ const featuredProjects = workProjects.map((project) => ({
 									shadow-[0_24px_90px_rgba(0,0,0,0.38)]
 									transition-all
 									duration-500
-
 									hover:-translate-y-1
 									hover:border-cyan-300/70
 									hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)]
@@ -151,7 +150,6 @@ const featuredProjects = workProjects.map((project) => ({
 										transition-all
 										duration-500
 										ease-in-out
-
 										group-hover:scale-[0.96]
 										group-hover:opacity-0
 									"
@@ -169,7 +167,7 @@ const featuredProjects = workProjects.map((project) => ({
 												overflow-hidden
 												rounded-2xl
 												bg-transparent
-                        h-full
+                                                h-full
 											"
 										>
 											<img
@@ -433,7 +431,7 @@ const featuredProjects = workProjects.map((project) => ({
 										<div class="mt-auto pt-6">
 											<div class="inline-flex items-center gap-3">
 												<a
-													href="/contact"
+														href={`/contact?project=${encodeURIComponent(project.title)}#contact`}
 													class="
 														inline-flex
 														items-center
@@ -719,7 +717,7 @@ const featuredProjects = workProjects.map((project) => ({
 						</p>
 
 						<a
-							href="/contact"
+							href="/contact#contact"
 							class="
 								lg:mt-7
                 mt-3

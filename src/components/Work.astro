@@ -111,7 +111,7 @@ const featuredWorks = workProjects.slice(0, 3).map((project) => ({
               <div class="mt-auto pt-6">
                 <div class="inline-flex items-center gap-3">
                   <a
-                    href="/contact"
+                    href={`/contact?project=${encodeURIComponent(project.title)}#contact`}
                     class="inline-flex items-center rounded-full border border-cyan-300/55 px-4 py-2.5 text-sm font-bold text-cyan-300 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-300 hover:text-[#06101f]"
                   >
                     <span>View Case Study</span>

@@ -16,12 +16,19 @@
         Stay Connected, Stay Informed.
       </h2>
 
-      <form class="flex w-full flex-col gap-4 sm:flex-row lg:max-w-xl lg:flex-1 lg:justify-end" action="#" method="post">
+      <form
+        class="flex w-full flex-col gap-4 sm:flex-row lg:max-w-xl lg:flex-1 lg:justify-end"
+        action="mailto:hello@technestwebsolution.com"
+        method="post"
+        enctype="text/plain"
+        data-newsletter-form
+      >
         <input
           type="email"
           name="email"
           autocomplete="email"
           placeholder="Enter Your Email...."
+          required
           class="h-14 w-full rounded-full border border-white/15 bg-[#07131f] px-6 font-montserrat text-[1rem] text-white outline-none transition-colors duration-150 placeholder:text-white/90 focus:border-cyan-300 focus:ring-0 sm:flex-1"
         />
 
@@ -35,3 +42,21 @@
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const email = new FormData(form).get("email");
+      const subject = "Newsletter subscription request";
+      const body = `Please add ${email} to the Technest Web Solution newsletter.`;
+      window.location.href = `mailto:hello@technestwebsolution.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  });
+</script>
