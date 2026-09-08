@@ -42,7 +42,7 @@ export const workProjects: WorkProject[] = [
     title: "Maaplo",
     description:
       "Maaplo is a cloud-based SaaS platform that helps tailoring businesses digitize customer measurements, manage records, and streamline daily operations with ease.",
-    image: "/img/maaplo.png",
+    image: "/img/maaplo-2.png",
     alt: "Patrol Pilot portfolio preview",
     icon: "laravel",
     features: [
