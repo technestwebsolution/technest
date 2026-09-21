@@ -1,4 +1,15 @@
-# Astro Starter Kit: Basics
+# TechNest Web Solution
+
+## Contact form mail setup
+
+The contact form submits to `public/api/contact.php` and sends mail through PHPMailer. Before deploying the PHP endpoint:
+
+1. Run `composer install` in the project root.
+2. Copy `.env.example` to `.env` and fill in the SMTP values.
+3. Build the Astro site with `npm run build`.
+4. Deploy the generated `dist` files together with the Composer `vendor` directory and the root `.env` file. The server must support PHP for `/api/contact.php`.
+
+The endpoint accepts only `POST` requests, validates the submitted fields, checks the same origin, blocks honeypot submissions, and rate-limits each IP to one submission per minute.
 
 ```sh
 npm create astro@latest -- --template basics
