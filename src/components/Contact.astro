@@ -1,4 +1,8 @@
 ---
+const contactApiUrl =
+  import.meta.env.PUBLIC_CONTACT_API_URL ||
+  "/api/contact.php";
+
 ---
 
 <section id="contact" class="relative isolate overflow-hidden px-5 py-16 text-white lg:py-10">
@@ -9,7 +13,7 @@
       <div class="bg-[linear-gradient(180deg,#223a6f_0%,#17284f_100%)] px-6 py-10 shadow-[0_26px_70px_rgba(0,0,0,0.26)] sm:px-10 sm:py-12 lg:px-12 lg:py-12">
         <h2 class="font-lexend text-[2rem] font-bold leading-tight text-white sm:text-[2.4rem]">Send Us a Message</h2>
 
-        <form class="mt-11 grid gap-8" action="/api/contact.php" method="post" data-contact-form>
+        <form class="mt-11 grid gap-8" action={contactApiUrl} method="post" data-contact-form>
           <input type="text" name="website" tabindex="-1" autocomplete="off" class="absolute -left-[9999px] h-px w-px opacity-0" aria-hidden="true" />
           <input type="hidden" name="form_started_at" value="" data-form-started-at />
 
