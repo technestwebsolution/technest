@@ -4,3 +4,8 @@
 .env
 .env.*
 !.env.example
+
+vendor/
+
+Dockerfile
+README.md
