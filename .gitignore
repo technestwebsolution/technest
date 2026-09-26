@@ -6,6 +6,8 @@ dist/
 
 # dependencies
 node_modules/
+vendor/
+backend/contact-api/vendor/
 
 # logs
 npm-debug.log*
@@ -13,12 +15,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# environment variables
+# environment variables / secrets
 .env
-.env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# jetbrains
 .idea/
