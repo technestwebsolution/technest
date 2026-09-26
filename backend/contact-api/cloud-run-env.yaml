@@ -1,0 +1,16 @@
+APP_TIMEZONE: "Asia/Kolkata"
+
+MAIL_HOST: "smtp.gmail.com"
+MAIL_PORT: "587"
+MAIL_ENCRYPTION: "tls"
+
+MAIL_USERNAME: "technestwebsolution@gmail.com"
+MAIL_FROM_ADDRESS: "technestwebsolution@gmail.com"
+MAIL_FROM_NAME: "TechNest Web Solution"
+MAIL_TO_ADDRESS: "technestwebsolution@gmail.com"
+
+MAIL_SMTP_DEBUG: "false"
+
+ALLOWED_ORIGIN_PRIMARY: "https://technestwebsolution.com"
+ALLOWED_ORIGIN_WWW: "https://www.technestwebsolution.com"
+ALLOWED_ORIGIN_PREVIEW: ""
