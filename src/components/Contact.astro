@@ -78,7 +78,12 @@ const turnstileSiteKey =
     </div>
   </div>
 </section>
-
+<script
+  is:inline
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+  async
+  defer
+></script>
 <script is:inline>
   document.querySelectorAll("[data-contact-form]").forEach((form) => {
     const startedAt = form.querySelector("[data-form-started-at]");
@@ -95,12 +100,28 @@ const turnstileSiteKey =
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+const formData = new FormData(form);
+const turnstileToken = formData.get("cf-turnstile-response");
 
+if (!turnstileToken) {
+  if (status) {
+    status.textContent = "Please complete the security check.";
+    status.className = "min-h-6 font-montserrat text-sm text-red-200";
+  }
+
+  return;
+}
       if (status) { status.textContent = "Sending your message…"; status.className = "min-h-6 font-montserrat text-sm text-white/75"; }
       if (submitButton) { submitButton.disabled = true; submitButton.textContent = "Sending…"; }
 
       try {
-        const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        const response = await fetch(form.action, {
+  method: "POST",
+  body: formData,
+  headers: {
+    Accept: "application/json",
+  },
+});
         const result = await response.json();
         if (!response.ok || !result.ok) throw new Error(result.message || "We could not send your message right now.");
         form.reset();
@@ -108,9 +129,16 @@ const turnstileSiteKey =
         if (status) { status.textContent = result.message; status.className = "min-h-6 font-montserrat text-sm text-cyan-200"; }
       } catch (error) {
         if (status) { status.textContent = error instanceof Error ? error.message : "We could not send your message right now. Please try again later."; status.className = "min-h-6 font-montserrat text-sm text-red-200"; }
-      } finally {
-        if (submitButton) { submitButton.disabled = false; submitButton.textContent = "Send Message"; }
-      }
+     } finally {
+  if (window.turnstile) {
+    window.turnstile.reset();
+  }
+
+  if (submitButton) {
+    submitButton.disabled = false;
+    submitButton.textContent = "Send Message";
+  }
+}
     });
   });
 </script>
