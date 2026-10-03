@@ -1,8 +1,10 @@
 ---
 const contactApiUrl =
   import.meta.env.PUBLIC_CONTACT_API_URL ||
-  "/api/contact.php";
+  "https://api.technestwebsolution.com/contact";
 
+const turnstileSiteKey =
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || "";
 ---
 
 <section id="contact" class="relative isolate overflow-hidden px-5 py-16 text-white lg:py-10">
@@ -43,6 +45,15 @@ const contactApiUrl =
             <input id="contact-consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 rounded border-white/35 bg-transparent text-cyan-300 focus:ring-cyan-300" />
             <label for="contact-consent" class="font-montserrat text-[0.92rem] leading-6 text-white/88">I agree that my data is collected and stored. <span class="text-[#ff6b6b]">*</span></label>
           </div>
+
+<div
+  class="cf-turnstile"
+  data-sitekey={turnstileSiteKey}
+  data-theme="dark"
+  data-size="flexible"
+  data-action="contact_form"
+></div>
+
 
           <div data-contact-status class="min-h-6 font-montserrat text-sm" aria-live="polite"></div>
 
